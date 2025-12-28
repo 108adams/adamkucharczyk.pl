@@ -1,0 +1,1 @@
+Read `cc/TASK.md` load task. Analyze, ask questions. BP-1, BP-2, BP-3 apply
