@@ -4,14 +4,10 @@ export default {
       text: 'About',
       url: '/about/'
     },
-    {
-      text: 'Docs',
-      url: '/get-started/'
-    },
-    {
-      text: 'Built with',
-      url: '/built-with/'
-    },
+    // {
+    //   text: 'Docs',
+    //   url: '/get-started/'
+    // },
     {
       text: 'Blog',
       url: '/blog/'
@@ -19,20 +15,20 @@ export default {
   ],
   bottom: [
     {
-      text: 'Style guide',
-      url: '/styleguide/'
-    },
-    {
-      text: 'Imprint',
+      text: 'Legal',
       url: '/imprint/'
     },
     {
-      text: 'Privacy',
+      text: 'Polityka prywatności',
       url: '/privacy/'
     },
     {
-      text: 'Accessibility',
+      text: 'Dostępność',
       url: '/accessibility/'
+    },
+    {
+      text: 'Kontakt',
+      url: '/contact/'
     }
   ]
 };

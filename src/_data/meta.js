@@ -19,10 +19,10 @@ export const author = {
   // https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/
 };
 export const creator = {
-  name: 'Lene Saile', // i.e. Lene Saile - creator's (developer) name.
-  email: 'hola@lenesaile.com',
-  website: 'https://www.lenesaile.com',
-  social: 'https://front-end.social/@lene'
+  name: 'Adam Kucharczyk', // i.e. Lene Saile - creator's (developer) name.
+  email: 'me@adamkucharczyk.pl',
+  website: 'https://www.adamkucharczyk.pl',
+  social: 'https://pol.social/@adamkucharczyk'
 };
 export const pathToSvgLogo = 'src/assets/svg/misc/logo.svg'; // used for favicon generation
 export const themeColor = '#dd4462'; // used in manifest, for example primary color value

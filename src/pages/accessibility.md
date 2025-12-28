@@ -6,6 +6,8 @@ permalink: /accessibility/index.html
 layout: page
 ---
 
+## Note from the layout/starter creator
+
 Accessibility design is about ensuring equal access for people with disabilities. It is about removing barriers to access.
 
 I am very committed to this principle and I continually try to improve the user experience for everyone.
