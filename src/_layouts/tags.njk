@@ -2,9 +2,9 @@
 layout: base
 ---
 
-<div class="region">
-  <div class="wrapper flow">
-    <h1 class="gradient-text-linear text-step-4">{{ title }}</h1>
-    {{ content | safe }}
-  </div>
+<div class="wrapper flow">
+  <header class="tag-header">
+    <h1>{{ title }}</h1>
+  </header>
+  {{ content | safe }}
 </div>
