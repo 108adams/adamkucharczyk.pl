@@ -1,13 +1,17 @@
 export default {
   top: [
     {
-      text: 'About',
-      url: '/about/'
+      text: 'Kursy',
+      url: '/courses/'
     },
     {
-      text: 'Blog',
-      url: '/blog/'
+      text: 'O mnie',
+      url: '/about/'
     }
+    // {
+    //   text: 'Blog',
+    //   url: '/blog/'
+    // }
   ],
   bottom: [
     {

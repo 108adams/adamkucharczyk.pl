@@ -1,5 +1,5 @@
 ---
-title: About
+title: O mnie
 permalink: /about/index.html
 description: 'Kilka słów o mnie'
 layout: page

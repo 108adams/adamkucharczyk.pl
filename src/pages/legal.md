@@ -1,9 +1,9 @@
 ---
-title: Legal notice
+title: Nota prawna
 discover:
-  title: Legal notice
+  title: Nota prawna
 permalink: /imprint/index.html
-description: Imprint infos
+description: Informacje prawne
 layout: page
 ---
 
