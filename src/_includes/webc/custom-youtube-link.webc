@@ -3,10 +3,10 @@
     display: flex;
     align-items: flex-start;
     gap: var(--space-xs);
-    font-size: var(--size-step-min-1);
+    font-size: var(--size-step-min-2);
   }
   custom-youtube-link svg {
-    font-size: var(--size-step-0);
+    font-size: var(--size-step-min-1);
     margin-block-start: 0.1em;
   }
 </style>

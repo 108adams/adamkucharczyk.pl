@@ -1,31 +1,26 @@
 ---
 layout: base
 title: Blog
-description: 'All blog posts can be found here'
-pagination:
-  data: collections.allPosts
-  size: 8
+subtitle: 'Kilka myśli o AI, kodowaniu i systemach IT'
+description: 'Wszystkie wpisy'
 permalink: 'blog/{% if pagination.pageNumber >=1 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
+pagination:
+    data: collections.allPosts
+    size: 8
 ---
 
-<div class="wrapper">
-  <header class="full | section" style="--spot-color: var(--color-secondary)">
-    <div class="section__inner flow region" style="--region-space-top: var(--space-xl-2xl)">
-      <h1 class="text-center" style="color: var(--color-light);">{{ title }}</h1>
+<div class="wrapper flow prose">
+
+    <header class="page-header">
+        <h1>{{ title }}</h1>
+        <div class="blog-subtitle">{{ subtitle }}</div>
+    </header>
+
+    <div class="blog-list">
+        {% asyncEach item in pagination.items %}
+        {% include "partials/card-blog-editorial.njk" %}
+        {% endeach %}
     </div>
-
-    {% svg "divider/edgy",
-    null,
-    "divider" %}
-  </header>
-
-  <div class="region flow prose" style="--region-space-top: var(--space-xl-2xl)">
-
-    <custom-masonry layout="50-50">
-      {% asyncEach item in pagination.items %}
-      {% include "partials/card-blog.njk" %}
-      {% endeach %}
-    </custom-masonry>
 
     <!-- set collection to paginate -->
     {% set collectionToPaginate = collections.posts %}
@@ -33,7 +28,7 @@ permalink: 'blog/{% if pagination.pageNumber >=1 %}page-{{ pagination.pageNumber
     {% set metaKey = "blog" %}
     <!-- if the number of items in the collection is greater than the number of items shown on one page -->
     {% if collectionToPaginate.length > pagination.size %}
-      <!-- include pagination -->
-      {% include 'partials/pagination.njk' %}
+        <!-- include pagination -->
+        {% include 'partials/pagination.njk' %}
     {% endif %}
-  </div>
+</div>

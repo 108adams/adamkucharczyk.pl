@@ -4,10 +4,6 @@ export default {
       text: 'About',
       url: '/about/'
     },
-    // {
-    //   text: 'Docs',
-    //   url: '/get-started/'
-    // },
     {
       text: 'Blog',
       url: '/blog/'
@@ -21,10 +17,6 @@ export default {
     {
       text: 'Polityka prywatności',
       url: '/privacy/'
-    },
-    {
-      text: 'Dostępność',
-      url: '/accessibility/'
     },
     {
       text: 'Kontakt',

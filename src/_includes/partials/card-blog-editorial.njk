@@ -1,0 +1,34 @@
+{% set headingLevel = headingLevel | default("h2") %}
+{% set definedDate = definedDate | default(item.date) %}
+
+<article class="blog-post-card">
+  <div class="blog-post-meta">
+    {% include "partials/date.njk" %}
+    {% if item.data.draft %}
+      <span class="draft-badge">Draft</span>
+    {% endif %}
+    {% if item.data.tags.length > 1 %}
+      <div class="blog-post-tags">
+        {% for tag in item.data.tags %}
+          {% if tag != "posts" %}
+            <a href="/tags/{{ tag | slugify }}/" class="blog-post-tag">{{ tag }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <{{ headingLevel }}>
+    <a href="{{ item.url | url }}" class="card-main-link" style="text-decoration: none; color: inherit;">
+      {{ item.data.title }}
+    </a>
+  </{{ headingLevel }}>
+
+  {% if item.data.description %}
+    <div class="blog-post-description">
+      {{ item.data.description | markdownFormat | safe }}
+    </div>
+  {% endif %}
+
+  <a href="{{ item.url | url }}" class="blog-post-link">Read Article</a>
+</article>

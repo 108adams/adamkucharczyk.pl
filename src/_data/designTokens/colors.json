@@ -61,6 +61,54 @@
     {
       "name": "Gold Subdued",
       "value": "#f1c15b"
+    },
+    {
+      "name": "Solarized Base3",
+      "value": "#fdf6e3"
+    },
+    {
+      "name": "Solarized Base2",
+      "value": "#eee8d5"
+    },
+    {
+      "name": "Solarized Base1",
+      "value": "#93a1a1"
+    },
+    {
+      "name": "Solarized Base0",
+      "value": "#839496"
+    },
+    {
+      "name": "Solarized Base00",
+      "value": "#657b83"
+    },
+    {
+      "name": "Solarized Base01",
+      "value": "#586e75"
+    },
+    {
+      "name": "Solarized Base02",
+      "value": "#073642"
+    },
+    {
+      "name": "Solarized Base03",
+      "value": "#002b36"
+    },
+    {
+      "name": "Solarized Cyan",
+      "value": "#2aa198"
+    },
+    {
+      "name": "Solarized Green",
+      "value": "#859900"
+    },
+    {
+      "name": "Solarized Yellow",
+      "value": "#b58900"
+    },
+    {
+      "name": "Solarized Blue",
+      "value": "#268bd2"
     }
   ]
 }

@@ -1,6 +1,6 @@
 .theme-switch h2 {
-  font-size: var(--size-step-min-1);
-  font-family: var(--font-base);
+  font-size: var(--size-step-min-2);
+  font-family: var(--font-mono);
 }
 
 .theme-switch .button[aria-pressed='true'] {
@@ -8,7 +8,6 @@
   --button-bg: var(--_color-contrast);
   --button-color: var(--color-dark);
   --button-hover-color: var(--color-dark);
-  --button-border-color: var(--_color-contrast);
   --focus-color: var(--_color-contrast);
 }
 

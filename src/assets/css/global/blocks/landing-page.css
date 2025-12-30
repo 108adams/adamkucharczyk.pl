@@ -1,0 +1,26 @@
+.landing-page > section {
+    margin-bottom: 120px;
+}
+
+.landing-page strong {
+    color: orangered;
+}
+
+.section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-bg-accent);
+    margin-left: 24px;
+}

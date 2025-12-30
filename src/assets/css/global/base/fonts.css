@@ -1,31 +1,31 @@
 @font-face {
-  font-family: 'Atkinson Hyperlegible';
+  font-family: 'Spectral';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
   src:
     local(''),
-    url('/assets/fonts/atkinson/atkinson-hyperlegible-regular.woff2') format('woff2');
+    url('/assets/fonts/Spectral/Spectral-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Atkinson Hyperlegible';
+  font-family: 'Spectral';
   font-style: italic;
   font-display: swap;
   font-weight: 400;
   src:
     local(''),
-    url('/assets/fonts/atkinson/atkinson-hyperlegible-italic.woff2') format('woff2');
+    url('/assets/fonts/Spectral/Spectral-Italic.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Atkinson Hyperlegible';
+  font-family: 'Spectral';
   font-style: normal;
   font-display: swap;
   font-weight: 700;
   src:
     local(''),
-    url('/assets/fonts/atkinson/atkinson-hyperlegible-bold.woff2') format('woff2');
+    url('/assets/fonts/Spectral/Spectral-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -35,5 +35,19 @@
   font-weight: 900;
   src:
     local(''),
-    url('/assets/fonts/redhat/red-hat-display-v7-latin-900.woff2') format('woff2');
+    url('/assets/fonts/redhat/RedHatDisplay-ExtraBold.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Redhat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local(''),
+    url('/assets/fonts/redhat/RedHatDisplay-ExtraBoldItalic.ttf') format('truetype');
+}
+
+
+/* IBM Plex Mono - Monospace font for labels and UI */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');

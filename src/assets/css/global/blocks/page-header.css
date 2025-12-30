@@ -1,0 +1,30 @@
+.page-header {
+    margin-bottom: 80px;
+    padding-bottom: 48px;
+    position: relative;
+}
+
+.page-header h1 {
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--color-text-strong);
+    margin-bottom: 0;
+    letter-spacing: -0.02em;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-primary);
+  box-shadow: 0 0 20px color-mix(in oklab, var(--color-primary) 30%, transparent);
+}
+
+.page-header .meta {
+    margin-bottom: 0;
+    font-size: small;
+}

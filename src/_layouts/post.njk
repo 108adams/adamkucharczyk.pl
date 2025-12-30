@@ -3,15 +3,9 @@ layout: base
 schema: BlogPosting
 ---
 
-<div class="region" style="--region-space-top: var(--space-xl-2xl)">
-  <div class="wrapper flow prose">
-    <h1 class="gradient-text">{{ title }}</h1>
-
-    {% if image %}
-      <!-- image -->
-      {% image image, alt or "", credit, "eager", "feature" %}
-    {% endif %}
-
+<div class="wrapper flow prose">
+  <header class="page-header">
+    <h1>{{ title }}</h1>
     <p class="meta | cluster gutter-xs-s">
       <!-- draft status -->
       {%- if draft -%}
@@ -29,8 +23,14 @@ schema: BlogPosting
         {% endif %}{% endfor %}
       {% endif %}
     </p>
+  </header>
 
-    {{ content | safe }}
+  {% if image %}
+    <!-- image -->
+    {% image image, alt or "", credit, "eager", "feature" %}
+  {% endif %}
+
+  {{ content | safe }}
     {% include 'partials/edit-on.njk' %}
   </div>
 

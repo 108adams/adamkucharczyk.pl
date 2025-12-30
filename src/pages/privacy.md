@@ -1,41 +1,44 @@
 ---
-title: Privacy Policy
+title: Polityka Prywatności
 discover:
-  title: Privacy Policy
+  title: Polityka Prywatności
 permalink: /privacy/index.html
-description: I respect the EU General Data Protection Regulation (GDPR). This policy document explains how I collect and handle any information you provide to me.
+description: Ta strona jest zgodna z ogólnym rozporządzeniem o ochronie danych osobowych UE (RODO). Ten dokument wyjaśnia, jak gromadzę i obsługuję wszelkie informacje, które mi przekazujesz.
 date: "Last Modified"
 layout: page
 ---
 
-Edit your details in `_data/personal.yaml`
+Ta strona jest zgodna z ogólnym rozporządzeniem o ochronie danych osobowych UE (RODO). Niniejszy dokument wyjaśnia, jak
+gromadzimy i przetwarzamy wszelkie informacje, które są przez Ciebie przekazywane.
 
-I respect the EU General Data Protection Regulation (GDPR) and this policy document explains how I collect and handle any information you provide to me.
+**Jakie dane są zbierane w tle?**
+Ta strona nie używa żadnych skryptów śledzących stron trzecich.
 
-**What background data is collected?**
-This site does not use any third party tracking scripts.
+**Jak wykorzystuję dane, które podajesz?**
+Ta strona nie gromadzi żadnych danych.
 
-**How do I use the data you provide?**
-This website does not collect any data.
+**Jak bezpieczne są Twoje dane?**
+Bardzo bezpieczne, ponieważ ta strona nie gromadzi żadnych informacji.
 
-**How secure is your data?**
-Very secure, as this website does not collect any information.
+**Jak bezpieczna jest ta strona?**
+Ta strona używa protokołu HTTPS, szyfrując wszystkie dane między przeglądarką a serwerem. Twój dostawca sieci
+nadal może zobaczyć, że pobierasz zasoby z tej strony, ale nie jej zawartość. Chroni to również przed przechwytywaniem
+danych przez strony trzecie, na przykład podczas przeglądania w publicznej sieci WiFi, lub przed wstrzykiwaniem reklam
+przez dostawców sieci na tej stronie. Wszystkie odpowiednie nagłówki HTTP odpowiedzi są ustawione dla Twojej ochrony, a
+polityka bezpieczeństwa treści jest dostosowana do wymagań tej strony.
 
-**How secure is this website?**
-This website transmits itself using HTTPS, encrypting all data between the browser and the server. Your network provider can still see that you are downloading assets from this site, but not its content. This also protects you from third parties intercepting data, for example, while browsing on public WiFi, or from network providers injecting advertisements on this site. All relevant response HTTP headers are set for your protection and the Content Security Policy is adjusted to this websites requirements.
-
-**Data controller**
+**Administrator danych**
 
 {{ personal.address }}
 
-If you have any questions or doubts, please contact me: {{ personal.email }}.
+Jeśli masz jakiekolwiek pytania lub wątpliwości, skontaktuj się ze mną: {{ personal.email }}.
 
-**Changes to the policy**
-If I change the content of this policy, those changes will be effective at the time I post them here.
+**Zmiany w polityce**
+Jeśli zmienię treść tej polityki, zmiany będą obowiązywać od momentu ich opublikowania.
 
-**Complaints**
-If you have any reason to complain about the way I handle your privacy, please contact me by email: {{ personal.email }}.
+**Reklamacje**
+Skontaktuj się ze mną: {{ personal.email }}.
 
 ---
 
-*Last updated: {{ page.date | formatDate('MMMM D, YYYY') }}*
+*Ostatnia aktualizacja: {{ page.date | formatDate('MMMM D, YYYY') }}*

@@ -30,19 +30,21 @@
   --color-mid: var(--color-gray-400);
 }
 
-/* Light theme */
+/* Light theme - Solarized Light */
 :root,
 :root[data-theme='light'] {
-  --color-text: var(--color-gray-800);
-  --color-bg: var(--color-gray-100);
+  --color-text: var(--color-solarized-base00);
+  --color-bg: var(--color-solarized-base3);
 
-  --color-primary: var(--color-pink);
-  --color-secondary: var(--color-blue);
-  --color-tertiary: var(--color-gold);
+  --color-primary: var(--color-solarized-cyan);
+  --color-secondary: var(--color-solarized-green);
+  --color-tertiary: var(--color-solarized-yellow);
 
-  --color-text-accent: var(--color-gray-700);
-  --color-bg-accent: var(--color-gray-200);
-  --color-bg-accent-2: var(--color-gray-300);
+  --color-text-accent: var(--color-solarized-base01);
+  --color-text-muted: var(--color-solarized-base1);
+  --color-bg-accent: var(--color-solarized-base2);
+  --color-bg-accent-2: var(--color-solarized-base1);
+  --color-text-strong: var(--color-solarized-base02);
 }
 
 /* Dark theme */

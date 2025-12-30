@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Skill(memory-dump)",
+      "Skill(frontend-design:frontend-design)",
+      "Bash(npm run colors:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run build:11ty:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat\\(design\\): implement Solarized Light editorial design\n\nRedesigned landing page with editorial/technical aesthetic:\n- Solarized Light color palette \\(warm, sophisticated\\)\n- New typography: Spectral serif + IBM Plex Mono\n- Sticky navigation with simplified structure\n- Hero section with generous spacing and cyan accent line\n- Service cards with featured/standard styling\n- Clean footer with copyright and contact link\n- Removed wavy divider for geometric simplicity\n\nDesign tokens updated with Solarized palette colors.\nTemplates simplified for cleaner structure.\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
+    ]
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  }
+}
