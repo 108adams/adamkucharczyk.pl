@@ -1,21 +1,43 @@
 <footer class="site-footer">
-  <div class="footer-wrapper">
-    <div class="copyright">&copy; {% year %} {{ meta.siteName }}</div>
-    <nav aria-label="{{ meta.navigation.ariaBottom }}">
-      <ul class="footer-nav" role="list">
-        {% for item in navigation.bottom %}
-          <li>
+    <div class="footer-wrapper">
+        <div class="copyright">&copy; {% year %} {{ meta.siteName }}</div>
+
+        <nav aria-label="{{ meta.navigation.ariaBottom }}">
+            <ul class="footer-nav" role="list">
+                {% for item in navigation.bottom %}
+                <li>
+                    <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </nav>
+
+        <nav aria-label="{{ meta.navigation.ariaPlatforms }}">
+            <!-- gets the first item from the feed loop set in meta -->
             <a
-              href="{{ item.url }}"
-              {{
-                helpers.getLinkActiveState(item.url, page.url)
-                | safe
-              }}
-              >{{ item.text }}</a
+                    href="{{ meta.blog.feedLinks[0].url }}"
+                    rel="alternate"
+                    type="{{ meta.blog.feedLinks[0].type }}"
+                    class="button"
+                    data-icon
             >
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </div>
+                <span class="visually-hidden">{{ meta.blog.feedLinks[0].title }}</span>
+                {% svg "misc/rss" %}
+            </a>
+
+            {% for key, value in personal.platforms %}
+                {% if value != "" %}
+                    <!-- regular platforms -->
+                    <a class="no-indicator button" data-icon href="{{ value }}" rel="me">
+                        <span class="visually-hidden">{{ key | capitalize }}</span>
+                        {% svg 'platform/' + key %}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </nav>
+
+        <div>{% include 'partials/theme-switch.njk' %}</div>
+    </div>
+
 </footer>

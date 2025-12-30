@@ -25,6 +25,15 @@ body {
 
 main {
     flex: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+}
+
+@media (min-width: 1000px) {
+  main {
+    min-width: 900px;
+  }
 }
 
 h1,
@@ -84,7 +93,8 @@ em {
     font-variant: all-small-caps;
 }
 
-.ai {}
+.ai {
+}
 
 hr {
     border: none;

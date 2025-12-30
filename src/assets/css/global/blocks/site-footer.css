@@ -1,41 +1,61 @@
 /* Footer */
 .site-footer {
-  background: var(--color-bg-accent);
-  border-top: 1px solid var(--color-bg-accent-2);
-  margin-top: 120px;
+    background: var(--color-bg-accent);
+    border-top: 1px solid var(--color-bg-accent-2);
+    margin-top: 120px;
 }
 
 .footer-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 48px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .copyright {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12px;
-  color: var(--color-text-accent);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--color-text-accent);
 }
 
 .footer-nav {
-  display: flex;
-  gap: 24px;
-  list-style: none;
+    display: flex;
+    gap: 24px;
+    list-style: none;
 }
 
 .footer-nav a {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-text-accent);
-  text-decoration: none;
-  transition: color 0.3s ease;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer-nav a:hover {
-  color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.footer-personal {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.footer-personal a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-personal a:hover {
+    color: var(--color-primary);
 }

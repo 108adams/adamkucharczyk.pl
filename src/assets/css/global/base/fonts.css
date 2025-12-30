@@ -35,8 +35,19 @@
   font-weight: 900;
   src:
     local(''),
-    url('/assets/fonts/redhat/red-hat-display-v7-latin-900.woff2') format('woff2');
+    url('/assets/fonts/redhat/RedHatDisplay-ExtraBold.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Redhat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local(''),
+    url('/assets/fonts/redhat/RedHatDisplay-ExtraBoldItalic.ttf') format('truetype');
+}
+
 
 /* IBM Plex Mono - Monospace font for labels and UI */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
