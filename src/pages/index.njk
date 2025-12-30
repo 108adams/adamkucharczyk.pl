@@ -9,7 +9,7 @@ blog:
     intro: 'Co mnie zainteresowało, czym się zajmowałem'
 ---
 
-<section id="hero" class="hero landing-page left-bar">
+<section id="hero" class="hero">
     <div class="hero-label"></div>
     <h1>{{ title }}</h1>
     <div class="hero-subtitle">{{ description }}</div>
@@ -23,20 +23,20 @@ blog:
     <a href="/about/" class="cta-primary"><span>Sprawdź kurs dla siebie</span></a>
 </section>
 
-<section id="services" class="services landing-page">
+<section id="services" class="services">
 <div class="section-label">Oferta</div>
 
 <div class="service-card featured">
     <div class="service-badge">⟡ Przede wszystkim</div>
     <h3><span class="ai">AI</span> dla seniorów</h3>
     <p>
-        <span class="hero-section"><strong>Poznaj</strong>
-            sposoby i filozofię pracy z agentami <span class="ai">AI</span>
-            &mdash; <em>Claude Code</em>, <em>Codex</em> itp.
-        </span>
+            <span class="hero-section"><strong>Poznaj</strong>
+                sposoby i filozofię pracy z agentami <span class="ai">AI</span>
+                &mdash; <em>Claude Code</em>, <em>Codex</em> itp.
+            </span>
 
         <span class="hero-section">Architektura i myślenie systemowe: to Twoje silne strony.
-      <strong>Naucz się</strong>, jak ich efektywnie używać.</span>
+          <strong>Naucz się</strong>, jak ich efektywnie używać.</span>
 
         <span class="hero-section">Aktywnie <strong>kieruj</strong> agentami w projekcie, ucz je i <strong>egzekwuj</strong> jakość.</span>
     </p>
@@ -65,17 +65,18 @@ blog:
 </div>
 </section>
 
-<section id="credentials" class="credentials landing-page">
+<section id="credentials" class="credentials">
 <div class="section-label">O mnie</div>
 
 <div class="credential-item"><strong>Doświadczenie:</strong> ponad 20 lat w IT, 8+ lat jako architekt rozwiązań i&nbsp;korporacyjny
 </div>
-<div class="credential-item"><strong>Specjalizacja:</strong> architektura systemowa wspomagana <span class="ai">AI</span>
+<div class="credential-item"><strong>Specjalizacja:</strong> architektura systemowa wspomagana <span
+        class="ai">AI</span>
 </div>
 <div class="credential-item"><strong>Grupa docelowa:</strong> deweloperzy, architekci i PM</div>
 </section>
 
-<section id="blog-posts" class="blog-posts landing-page">
+<section id="blog-posts" class="blog-posts">
 <div class="section-label">{{ blog.title }}</div>
 {% if blog.intro %}
 <p style="margin-bottom: 3rem; color: var(--color-text-accent);">{{ blog.intro }}</p>

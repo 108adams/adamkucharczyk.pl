@@ -4,6 +4,17 @@
     position: relative;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-primary);
+  box-shadow: 0 0 20px color-mix(in oklab, var(--color-primary) 30%, transparent);
+}
+
 .hero-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;

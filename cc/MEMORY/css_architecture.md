@@ -92,7 +92,7 @@ Maps from theme → `:root` vars via postcss-js
 - Logical properties (inline-size, block-size)
 
 **fonts.css**
-- Atkinson Hyperlegible: 400, 400i, 700 (woff2)
+- Spectral
 - Redhat: 900 (display headings)
 - font-display: swap
 
@@ -223,7 +223,7 @@ padding-block: configurable
 
 **Typography:**
 - Fluid sizes: `var(--size-step-{min-2 to 6})`
-- Font families: `--font-base` (Atkinson), `--font-display` (Redhat)
+- Font families: `--font-base` (Spectral), `--font-display` (Redhat)
 - Weights: `--font-regular` (400), `--font-bold` (700), `--font-extra-bold` (900)
 - Leading: `--leading-fine`, `--leading-standard`, `--leading-flat`
 

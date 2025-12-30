@@ -1,90 +1,30 @@
-/* Page Header */
 .page-header {
-  margin-bottom: 80px;
-  padding-top: 80px;
-  padding-bottom: 48px;
-  position: relative;
+    margin-bottom: 80px;
+    padding-bottom: 48px;
+    position: relative;
+}
+
+.page-header h1 {
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--color-text-strong);
+    margin-bottom: 0;
+    letter-spacing: -0.02em;
 }
 
 .page-header::before {
   content: '';
   position: absolute;
-  left: -4px;
-  top: 80px;
+  left: -10px;
+  top: 0;
   bottom: 0;
   width: 3px;
   background: var(--color-primary);
   box-shadow: 0 0 20px color-mix(in oklab, var(--color-primary) 30%, transparent);
 }
 
-.page-header h1 {
-  font-family: 'Spectral', serif;
-  font-size: 56px;
-  font-weight: 300;
-  line-height: 1.2;
-  color: var(--color-text-strong);
-  margin-bottom: 0;
-  letter-spacing: -0.02em;
-}
-
-/* Post Header - Similar but with metadata */
-.post-header {
-  margin-bottom: 64px;
-  padding-top: 80px;
-  padding-bottom: 48px;
-  position: relative;
-}
-
-.post-header::before {
-  content: '';
-  position: absolute;
-  left: -4px;
-  top: 80px;
-  bottom: 0;
-  width: 3px;
-  background: var(--color-secondary);
-  box-shadow: 0 0 20px color-mix(in oklab, var(--color-secondary) 30%, transparent);
-}
-
-.post-header h1 {
-  font-family: 'Spectral', serif;
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--color-text-strong);
-  margin-bottom: 24px;
-  letter-spacing: -0.02em;
-}
-
-.post-header .meta {
-  margin-bottom: 0;
-}
-
-/* Tag Page Header */
-.tag-header {
-  margin-bottom: 64px;
-  padding-top: 80px;
-  padding-bottom: 32px;
-  position: relative;
-}
-
-.tag-header::before {
-  content: '';
-  position: absolute;
-  left: -4px;
-  top: 80px;
-  bottom: 0;
-  width: 3px;
-  background: var(--color-tertiary);
-  box-shadow: 0 0 20px color-mix(in oklab, var(--color-tertiary) 30%, transparent);
-}
-
-.tag-header h1 {
-  font-family: 'Spectral', serif;
-  font-size: 48px;
-  font-weight: 300;
-  line-height: 1.2;
-  color: var(--color-text-strong);
-  margin-bottom: 0;
-  letter-spacing: -0.02em;
+.page-header .meta {
+    margin-bottom: 0;
+    font-size: small;
 }
