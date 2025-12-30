@@ -2,64 +2,91 @@
 layout: base
 permalink: /index.html
 title: 'Adam Kucharczyk'
-description: 'Adam Kucharczyk - AI Architecture for Senior Developers'
+description: 'Architektura w świecie AI'
+metaclass: landing-page
 blog:
-  title: 'Blog'
-  intro: "Co mnie zainteresowało, czym się zajmowałem"
+    title: 'Blog'
+    intro: 'Co mnie zainteresowało, czym się zajmowałem'
 ---
 
-<section class="hero">
-  <div class="hero-label">Senior IT Architect</div>
-  <h1>{{ title }}</h1>
-  <div class="hero-subtitle">AI Architecture for Senior Developers</div>
-  <p class="hero-description">
-    20+ years of experience designing enterprise systems. Now teaching advanced developers
-    how to architect AI-powered applications that scale.
-  </p>
-  <a href="/about/" class="cta-primary"><span>Join Next Course</span></a>
-</section>
-
-<section class="services">
-  <div class="section-label">What I Offer</div>
-
-  <div class="service-card featured">
-    <div class="service-badge">⟡ Primary Focus</div>
-    <h3>Advanced AI Courses</h3>
-    <p>
-      Hands-on training for senior developers and architects. Learn to design AI-powered
-      systems from someone who's built them at scale for 20 years.
+<section id="hero" class="hero landing-page left-bar">
+    <div class="hero-label"></div>
+    <h1>{{ title }}</h1>
+    <div class="hero-subtitle">{{ description }}</div>
+    <p class="hero-description">
+        <span class="hero-section">Jesteś seniorem i chcesz poznać narzędzia, które pozwolą Ci przenieść Twoje doświadczenie do świata wspomaganego <span
+                class="ai">AI</span>.</span>
+        <span class="hero-section">Zastanawiasz się, jak wykorzystać doświadczenie i&nbsp;wiedzę w nowym kontekście zawodowym, w&nbsp;projektach, w&nbsp;których dużą część kodowania wykonuje LLM?</span>
+        <span class="hero-section">Zapraszam na <strong>spotkania</strong> i&nbsp;<strong>kursy</strong>, które pokazują, że <span
+                class="ai">AI</span> nie wypycha Cię z&nbsp;rynku pracy &mdash; ono powoduje, że jesteś jeszcze cenniejszy.</span>
     </p>
-    <a href="/about/" class="service-link">View Course Schedule</a>
-  </div>
+    <a href="/about/" class="cta-primary"><span>Sprawdź kurs dla siebie</span></a>
+</section>
 
-  <div class="service-card">
-    <h3>Architecture Consulting</h3>
+<section id="services" class="services landing-page">
+<div class="section-label">Oferta</div>
+
+<div class="service-card featured">
+    <div class="service-badge">⟡ Przede wszystkim</div>
+    <h3><span class="ai">AI</span> dla seniorów</h3>
     <p>
-      Strategic guidance for businesses navigating AI integration. Technical decisions
-      that align with your business goals and team capabilities.
+        <span class="hero-section"><strong>Poznaj</strong>
+            sposoby i filozofię pracy z agentami <span class="ai">AI</span>
+            &mdash; <em>Claude Code</em>, <em>Codex</em> itp.
+        </span>
+
+        <span class="hero-section">Architektura i myślenie systemowe: to Twoje silne strony.
+      <strong>Naucz się</strong>, jak ich efektywnie używać.</span>
+
+        <span class="hero-section">Aktywnie <strong>kieruj</strong> agentami w projekcie, ucz je i <strong>egzekwuj</strong> jakość.</span>
     </p>
-    <a href="/contact/" class="service-link">Book Consultation</a>
-  </div>
+    <a href="/about/" class="service-link">Zobacz terminy kursów</a>
+</div>
+
+<div class="service-card">
+    <h3>Konsultacja architektoniczna</h3>
+    <p>
+        Wsparcie projektów IT na poziomie strategicznym:
+    </p>
+
+    <ul>
+        <li>
+            konsultacje w obszarze architektury systemowej i rozwiązań,
+        </li>
+        <li>
+            integracje, wprowadzanie nowych systemów do przedsiębiorstwa,
+        </li>
+        <li>
+            modernizacja i evergreening
+        </li>
+    </ul>
+
+    <a href="/contact/" class="service-link">Umów konsultację</a>
+</div>
 </section>
 
-<section class="credentials">
-  <div class="credential-item"><strong>Experience:</strong> 20+ years in enterprise IT architecture</div>
-  <div class="credential-item"><strong>Specialization:</strong> AI systems design and implementation</div>
-  <div class="credential-item"><strong>Audience:</strong> Senior developers and technical leaders</div>
+<section id="credentials" class="credentials landing-page">
+<div class="section-label">O mnie</div>
+
+<div class="credential-item"><strong>Doświadczenie:</strong> ponad 20 lat w IT, 8+ lat jako architekt rozwiązań i&nbsp;korporacyjny
+</div>
+<div class="credential-item"><strong>Specjalizacja:</strong> architektura systemowa wspomagana <span class="ai">AI</span>
+</div>
+<div class="credential-item"><strong>Grupa docelowa:</strong> deweloperzy, architekci i PM</div>
 </section>
 
-<section class="region">
-  <div class="section-label">{{ blog.title }}</div>
-  {% if blog.intro %}
-    <p style="margin-bottom: 3rem; color: var(--color-text-accent);">{{ blog.intro }}</p>
-  {% endif %}
-  <div class="feature region region-space-l">
+<section id="blog-posts" class="blog-posts landing-page">
+<div class="section-label">{{ blog.title }}</div>
+{% if blog.intro %}
+<p style="margin-bottom: 3rem; color: var(--color-text-accent);">{{ blog.intro }}</p>
+{% endif %}
+<div class="feature region region-space-l">
     <custom-masonry layout="50-50">
-      {% set itemList = collections.allPosts %}
-      {% asyncEach item in itemList.slice(0, 4) %}
-      {% set headingLevel = "h3" %}
-      {% include "partials/card-blog.njk" %}
-      {% endeach %}
+        {% set itemList = collections.allPosts %}
+        {% asyncEach item in itemList.slice(0, 4) %}
+        {% set headingLevel = "h3" %}
+        {% include "partials/card-blog.njk" %}
+        {% endeach %}
     </custom-masonry>
-  </div>
+</div>
 </section>
