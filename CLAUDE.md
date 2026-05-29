@@ -17,31 +17,9 @@ This is an Eleventy-based static site generator project using the "Eleventy Exce
 
 ## Communication (MUST)
 
-All artifacts → `cc/` as Markdown
-
-**Environment:**
-
-- **Default: CLI** (Claude Code CLI)
-- User will inform you if using **Web interface**
-- **Web interface**: Show questions directly in output (do NOT create QUESTIONS.md)
-- **CLI**: Use QUESTIONS.md for >6 questions as described below
-
-**Files:**
-
-- `TASK.md` - Current task
-- `QUESTIONS.md` - Questions (CLI only: use if >6 questions or explicitly requested)
-- `RESPONSES.md` - Answers (READ-ONLY)
-- `PLAN_<x>.md`, `ANALYSIS_<x>.md`, `REPORT_<x>.md`
-
 **Rules:**
 
-- Never modify RESPONSES.md
-- **Prefer AskUserQuestion tool** (interactive questionnaire) for ≤6 questions
-- Use `QUESTIONS.md` file ONLY when:
-  - Working in CLI environment (default)
-  - More than 6 questions (needs solid clarification)
-  - User explicitly requests written format
-  - Then: collect questions → write once → STOP
+- **Prefer AskUserQuestion tool** (interactive questionnaire) for questions
 - **Token optimization: extreme concision, sacrifice grammar**
 
 **Filename Rules:**
@@ -64,28 +42,6 @@ All artifacts → `cc/` as Markdown
 - Example: "Theme config defined in `src/_data/meta.js:45`"
 - Enables IDE navigation and precise location tracking
 - For ranges: `file.js:100-110` or just start line for context
-
-## Persistent Memory (Context Continuity)
-
-**Purpose:** Enable Claude to maintain context across sessions and resume work seamlessly.
-
-**Location:** `cc/MEMORY/*.md` files
-
-**When to create/update:**
-- End of significant work session
-- Before context might be lost (long tasks)
-- Major milestone completed
-- Complex state that needs preservation
-
-**What to include:**
-- Current task/project state
-- Key decisions made
-- Files modified (with line numbers)
-- Next steps / pending tasks
-- References to related PLAN/ANALYSIS files
-- Critical patterns/gotchas discovered
-
-**Format:** Extreme concision, bullet points, minimal prose. Token-optimized for Claude only, not user documentation.
 
 ## Code Architecture
 
@@ -283,7 +239,7 @@ npm run pa11y:test       # Run pa11y tests (after build)
   - Sequential only when dependencies exist
 - **WF-5 (MUST)** Summary reporting:
   - **Successful implementation**: Report on-screen ONLY (no summary file)
-  - **Outstanding work/problems**: Create `cc/FUTURE_WORK_{descriptor}.md`
+  - **Outstanding work/problems**: report on-screen with clear next steps
   - Never create generic SUMMARY.md for completed tasks
 - **WF-6 (SHOULD)** Pre-commit verification:
   - [ ] Build succeeds: `npm run build`
@@ -336,18 +292,11 @@ npm run pa11y:test       # Run pa11y tests (after build)
 7. Edge cases, boundaries
 8. Skip type-checker coverage
 
-## Shortcuts
-
-**QPLAN**: Analyze plan consistency, minimal changes, reuse
-**QCODE**: Implement, test, verify
-**QUX**: UX scenarios by priority
-
 ## Agent Rules
 
 Agents follow modified rules:
 
 **Applies:**
-- Communication rules: `cc/` artifact protocol
 - BP-1: Clarify scope
 - BP-3: Multiple approaches
 
@@ -357,7 +306,7 @@ Agents follow modified rules:
 - WF-1-5: No commits
 - Test checklist: Only if writes tests
 
-**Docs:** Save findings `cc/ANALYSIS_<topic>.md`, summary, file:line refs
+**Docs:** Report findings inline with file:line refs
 
 ## Dependency Management
 
