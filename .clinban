@@ -1,0 +1,2 @@
+tickets_dir = "tickets"
+archive_dir = "tickets/archive"

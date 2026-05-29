@@ -15,6 +15,21 @@ This is an Eleventy-based static site generator project using the "Eleventy Exce
 - esbuild for JavaScript bundling
 - Node.js 20+
 
+## Ticket Workflow
+
+All discrete work is tracked in Clinban (`tickets/`). Use the `/tickets` skill for all lifecycle operations; `SCHEMA.md` is the authoritative field and FSM reference.
+
+**Lifecycle:**
+- **Before starting** — `clinban list` to find an existing ticket; if none, create one
+- **When starting** — `clinban move <id> in-progress`
+- **After commit confirmed** — `clinban move <id> done`, then `clinban archive <id>`
+- **When blocked** — `clinban move <id> blocked`; add a **Blocker** section to the ticket body
+
+**Rules:**
+- One ticket per discrete unit of work — sub-steps belong in the body checklist, not separate tickets
+- Never edit `status`, `created`, or `updated` directly in ticket files
+- Archive only after the commit is confirmed on the branch (see WF-3)
+
 ## Communication (MUST)
 
 **Rules:**
@@ -232,16 +247,17 @@ npm run pa11y:test       # Run pa11y tests (after build)
   - Footer: ALWAYS include Claude Code attribution
   - Use HEREDOC for multi-line messages
 
-- **WF-3 (MUST)** Wait commit confirmation
+- **WF-3 (MUST)** Wait commit confirmation; then close ticket: `clinban move <id> done` → `clinban archive <id>`
 - **WF-4 (SHOULD)** Parallel tool execution:
   - Run independent Read/Grep/Glob operations in parallel
   - Single message with multiple tool calls for efficiency
   - Sequential only when dependencies exist
 - **WF-5 (MUST)** Summary reporting:
   - **Successful implementation**: Report on-screen ONLY (no summary file)
-  - **Outstanding work/problems**: report on-screen with clear next steps
+  - **Outstanding work/problems**: report on-screen with clear next steps; move ticket to `blocked` with a Blocker note in the body
   - Never create generic SUMMARY.md for completed tasks
 - **WF-6 (SHOULD)** Pre-commit verification:
+  - [ ] Ticket is `in-progress`: `clinban list --status in-progress`
   - [ ] Build succeeds: `npm run build`
   - [ ] Accessibility tests pass: `npm run test:a11y`
   - [ ] No debug code: remove console.log, debugger statements
