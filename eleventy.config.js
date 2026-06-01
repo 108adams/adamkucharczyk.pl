@@ -107,6 +107,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     // -- to root
     'src/assets/images/favicon/*': '/',
+    'src/admin/config.yml': 'admin/config.yml',
 
     // -- node_modules
     'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': `assets/components/`
