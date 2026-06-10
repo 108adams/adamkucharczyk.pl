@@ -1,3 +1,5 @@
+<!-- Global config: ~/.claude/CLAUDE.md (pipeline workflow, ticket lifecycle, communication style). -->
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -15,48 +17,9 @@ This is an Eleventy-based static site generator project using the "Eleventy Exce
 - esbuild for JavaScript bundling
 - Node.js 20+
 
-## Ticket Workflow
+<!-- Ticket workflow: see ~/.claude/CLAUDE.md -->
 
-All discrete work is tracked in Clinban (`tickets/`). Use the `/tickets` skill for all lifecycle operations; `SCHEMA.md` is the authoritative field and FSM reference.
-
-**Lifecycle:**
-- **Before starting** — `clinban list` to find an existing ticket; if none, create one
-- **When starting** — `clinban move <id> in-progress`
-- **After commit confirmed** — `clinban move <id> done`, then `clinban archive <id>`
-- **When blocked** — `clinban move <id> blocked`; add a **Blocker** section to the ticket body
-
-**Rules:**
-- One ticket per discrete unit of work — sub-steps belong in the body checklist, not separate tickets
-- Never edit `status`, `created`, or `updated` directly in ticket files
-- Archive only after the commit is confirmed on the branch (see WF-3)
-
-## Communication (MUST)
-
-**Rules:**
-
-- **Prefer AskUserQuestion tool** (interactive questionnaire) for questions
-- **Token optimization: extreme concision, sacrifice grammar**
-
-**Filename Rules:**
-
-- **NEVER use colon (:) in filenames** - breaks git checkout on Windows
-  - ❌ BAD: `REPORT_2024-01-15:analysis.md`
-  - ✅ GOOD: `REPORT_2024-01-15_analysis.md`
-  - Use underscore (_) or hyphen (-) instead
-- Use descriptive names: `ANALYSIS_css_architecture.md` not `ANALYSIS_1.md`
-- Lowercase with underscores for multi-word: `build_css_tokens.js`
-- Date format in filenames: `YYYY-MM-DD` (ISO 8601, sortable)
-
-**Content Rules:**
-- Always provide date of creation in the header
-- Use PLAN files as work tracker/todo. Update with implementation progress
-
-**Code References:**
-
-- Use `file_path:line_number` format when referencing specific code
-- Example: "Theme config defined in `src/_data/meta.js:45`"
-- Enables IDE navigation and precise location tracking
-- For ranges: `file.js:100-110` or just start line for context
+<!-- Communication: see ~/.claude/CLAUDE.md -->
 
 ## Code Architecture
 
