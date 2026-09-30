@@ -5,23 +5,12 @@
     {
       "name": "Display",
       "description": "Display font stack for headings and large text. Redhat Display is made for headlines and big statements, are low contrast and spaced tightly, with a large x-height and open counters.",
-      "value": [
-        "Redhat",
-        "Segoe UI",
-        "Roboto",
-        "Helvetica Neue",
-        "Arial",
-        "sans-serif"
-      ]
+      "value": ["Redhat", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"]
     },
     {
       "name": "Base",
       "description": "Base font stack for body text.",
-      "value": [
-        "Spectral",
-        "system-ui",
-        "sans-serif"
-      ]
+      "value": ["Spectral", "system-ui", "sans-serif"]
     },
     {
       "name": "Mono",

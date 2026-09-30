@@ -48,6 +48,5 @@
     url('/assets/fonts/redhat/RedHatDisplay-ExtraBoldItalic.ttf') format('truetype');
 }
 
-
 /* IBM Plex Mono - Monospace font for labels and UI */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');

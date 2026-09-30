@@ -50,18 +50,18 @@
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
-  --color-text: var(--color-solarized-base00);
-  --color-bg: var(--color-solarized-base3);
+    --color-text: var(--color-solarized-base00);
+    --color-bg: var(--color-solarized-base3);
 
-  --color-primary: var(--color-solarized-cyan);
-  --color-secondary: var(--color-solarized-green);
-  --color-tertiary: var(--color-solarized-yellow);
+    --color-primary: var(--color-solarized-cyan);
+    --color-secondary: var(--color-solarized-green);
+    --color-tertiary: var(--color-solarized-yellow);
 
-  --color-text-accent: var(--color-solarized-base01);
-  --color-text-muted: var(--color-solarized-base1);
-  --color-bg-accent: var(--color-solarized-base2);
-  --color-bg-accent-2: var(--color-solarized-base1);
-  --color-text-strong: var(--color-solarized-base02);
+    --color-text-accent: var(--color-solarized-base01);
+    --color-text-muted: var(--color-solarized-base1);
+    --color-bg-accent: var(--color-solarized-base2);
+    --color-bg-accent-2: var(--color-solarized-base1);
+    --color-text-strong: var(--color-solarized-base02);
   }
 }
 :root[data-theme='dark'] {
