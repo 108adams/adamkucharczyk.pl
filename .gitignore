@@ -11,3 +11,6 @@ src/_includes/scripts
 
 # secret data
 .env
+
+# Claude Code local settings
+.claude/settings.local.json

@@ -31,4 +31,8 @@ Do not edit generated files in `dist/`, `src/_includes/css/`, or `src/_includes/
 
 ## Deployment Notes
 
-The live site is hosted by Netlify at `https://adamkucharczyk.pl`. The current deployment flow is: push to GitHub, Netlify builds the project, then Netlify serves the production site.
+Hosted on Netlify only (`netlify.toml`) at `https://adamkucharczyk.pl`. Flow: push to `main` on GitHub, Netlify builds and serves. Rollback: Netlify UI or revert commit.
+
+## Content & Language
+
+Site language is Polish; an English version may follow later. Posts live in `src/posts/YYYY/YYYY-MM-DD-slug.md`, authored directly as files in git.

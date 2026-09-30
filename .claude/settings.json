@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install*)",
+      "Bash(npm ci)",
+      "Bash(npm outdated*)",
+      "Bash(npm audit*)",
+      "Bash(npm ls*)",
+      "Bash(npx eleventy*)",
+      "Bash(npx prettier*)",
+      "Bash(npx pa11y-ci*)",
+      "Bash(node *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push)",
+      "Bash(git push origin main)",
+      "Bash(git pull*)",
+      "Bash(git fetch*)",
+      "Bash(git stash*)",
+      "Bash(git mv *)",
+      "Bash(git rm *)",
+      "Bash(clinban *)",
+      "Bash(mkdir *)",
+      "Bash(pkill -f \"eleventy --serve\")",
+      "WebSearch",
+      "WebFetch(domain:www.11ty.dev)",
+      "WebFetch(domain:tailwindcss.com)",
+      "WebFetch(domain:developer.mozilla.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.netlify.com)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean*)",
+      "Bash(rm -rf *)",
+      "Read(./.env)"
+    ]
+  }
+}
