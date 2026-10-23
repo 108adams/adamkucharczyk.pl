@@ -13,7 +13,7 @@ Global rules (git, security, ticket flow, commit format) come from `~/.claude`. 
 
 ## Site context
 
-- Personal site of a senior IT architect: promotes AI architecture courses for senior developers and direct consulting.
+- Personal site of a senior IT architect: an expert profile for recruiters and clients (architecture roles, consulting); training shown as a competence, not a course shop.
 - **Language: Polish** for all posts and UI copy. English version is a future goal — keep strings and content i18n-friendly (no hardcoded copy in JS), but do not build i18n yet.
 - Design taste: dimmed pastel palette close to Solarized; strong typographic contrast.
 - Content is authored as Markdown files in `src/posts/YYYY/YYYY-MM-DD-slug.md`, committed via git. The Sveltia CMS in `src/admin/` is a proof of concept; ignore it unless asked.
