@@ -42,9 +42,9 @@ export const dialog = {
 };
 export const navigation = {
   navLabel: 'Menu',
-  ariaTop: 'Main',
-  ariaBottom: 'Complementary',
-  ariaPlatforms: 'Platforms',
+  ariaTop: 'Główna',
+  ariaBottom: 'Uzupełniająca',
+  ariaPlatforms: 'Serwisy',
   drawerNav: false,
   subMenu: false
 };
@@ -53,27 +53,11 @@ export const themeSwitch = {
   light: 'jasny',
   dark: 'ciemny'
 };
-export const greenweb = {
-  // https://carbontxt.org/
-  disclosures: [
-    {
-      docType: 'sustainability-page',
-      url: `${url}/sustainability/`,
-      domain: domain
-    }
-  ],
-  services: [{domain: 'netlify.com', serviceType: 'cdn'}]
-};
 export const tests = {
   pa11y: {
     // keep customPaths empty if you want to test all pages
     customPaths: ['/', '/about/', '/blog/', '/styleguide/'],
     globalIgnore: []
   }
-};
-export const viewRepo = {
-  // this is for the view/edit on github link. The value in the package.json will be pulled in.
-  allow: true,
-  infoText: 'View this page on GitHub'
 };
 export const easteregg = false;
