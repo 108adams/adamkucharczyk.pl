@@ -22,7 +22,7 @@
     "pa11y:serve": "ELEVENTY_ENV=test eleventy --serve --ignore-initial",
     "test:a11y": "npm run pa11y:build && (npm run pa11y:serve &) && sleep 5 && npm run pa11y:test",
     "check:links": "node scripts/check-links.js",
-    "test": "node --test scripts/check-links.test.js",
+    "test": "node --test scripts/*.test.js",
     "prepare": "simple-git-hooks"
   },
   "keywords": [],

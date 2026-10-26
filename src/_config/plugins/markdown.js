@@ -7,7 +7,8 @@ export const markdownLib = markdownIt({
   html: true,
   breaks: true,
   linkify: true,
-  typographer: true
+  typographer: true,
+  quotes: '„”‚’'
 })
   .disable('code')
   .use(markdownItAnchor, {

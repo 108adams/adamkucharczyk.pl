@@ -38,6 +38,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('showInSitemap', showInSitemap);
 
   // ---------------------  Plugins
+  eleventyConfig.addPlugin(plugins.typography);
   eleventyConfig.addPlugin(plugins.htmlConfig);
 
   // ---------------------  bundle
