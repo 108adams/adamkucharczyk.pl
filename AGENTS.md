@@ -1,41 +1,25 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
+Development rules (architecture, CSS and tokens, accessibility, typography, fonts, public-repo
+security, quality gates, commits): **`docs/guidelines.md`**. This file holds structure, commands
+and the Codex audit workflow only.
 
-This is an Eleventy 3 static site. Source files live in `src/`; production output is generated into `dist/` and should not be edited directly. Pages are in `src/pages/`, posts in `src/posts/`, shared layouts in `src/_layouts/`, reusable Nunjucks/WebC components in `src/_includes/`, and site data in `src/_data/`. Eleventy configuration is modularized under `src/_config/`. Global CSS follows CUBE CSS layers in `src/assets/css/global/`; per-page styles belong in `src/assets/css/local/`. Images, SVGs, fonts, and scripts are under `src/assets/`.
+## Project Structure
 
-## Build, Test, and Development Commands
+Eleventy 3 static site. Source files live in `src/`; production output is generated into `dist/`. Pages are in `src/pages/`, shared layouts in `src/_layouts/`, Nunjucks includes in `src/_includes/`, site data and design tokens in `src/_data/`. Eleventy configuration is modularized under `src/_config/`. Global CSS follows CUBE CSS layers in `src/assets/css/global/`. Fonts, SVGs and images are under `src/assets/`. Build helper scripts and their `node:test` tests are in `scripts/`.
+
+## Commands
 
 - `npm install` installs dependencies; Node.js 20+ is required.
 - `npm start` runs the Eleventy development server with watch mode.
-- `npm run build` cleans generated files and builds the production site into `dist/`.
-- `npm run clean` removes `dist/` plus generated include CSS and scripts.
-- `npm run colors` regenerates `src/_data/designTokens/colors.json` from `colorsBase.json`.
+- `npm run build` cleans generated files, builds the production site into `dist/` and checks internal links.
+- `npm test` runs the `node:test` suites in `scripts/`.
 - `npm run test:a11y` builds in test mode, serves the site, and runs `pa11y-ci`.
+- `npm run colors` regenerates `src/_data/designTokens/colors.json` from `colorsBase.json`.
 
-## Coding Style & Naming Conventions
-
-Use ES modules for JavaScript and follow the existing named-export pattern in `src/_config/`. Keep Nunjucks layouts/includes small and composable. Write CSS according to the current CUBE structure: compositions for layout primitives, blocks for components, utilities for single-purpose helpers. Design tokens are the source of truth; avoid hardcoded spacing, color, or type values when a token exists. Use lowercase, descriptive filenames with hyphens or underscores, for example `build-css.js` or `nav-main-drawer-cls.css`.
-
-## Testing Guidelines
-
-There is no unit test suite in this repository. The main automated check is accessibility via `npm run test:a11y`. Run it for template, layout, navigation, content, and CSS changes that affect rendered pages. For build-system or token changes, also run `npm run build` to catch Eleventy, PostCSS, and bundling errors.
-
-## Commit & Pull Request Guidelines
-
-Recent history uses short conventional-style prefixes such as `feat:`, `docs:`, and `chore:`, though some older commits are plain summaries. Prefer `type: concise imperative summary`, for example `feat: add course landing page`. Pull requests should describe the user-facing change, list commands run, link any relevant issue or ticket, and include screenshots for visual changes.
-
-## Agent-Specific Instructions
-
-Do not edit generated files in `dist/`, `src/_includes/css/`, or `src/_includes/scripts/`. Edit `src/_data/designTokens/colorsBase.json` before running `npm run colors`; do not hand-edit generated color scales. Preserve existing content front matter and deployment configuration unless the task specifically requires changes.
-
-## Deployment Notes
+## Deployment
 
 Hosted on Netlify only (`netlify.toml`) at `https://adamkucharczyk.pl`. Flow: push to `main` on GitHub, Netlify builds and serves. Rollback: Netlify UI or revert commit.
-
-## Content & Language
-
-Site language is Polish; an English version may follow later. Posts live in `src/posts/YYYY/YYYY-MM-DD-slug.md`, authored directly as files in git.
 
 ## Codex Audit Workflow
 
@@ -50,7 +34,8 @@ Read what exists (skip files that don't exist yet):
 pipeline/02_architecture.md   ← architectural decisions, ADRs, component boundaries
 pipeline/03_design.md         ← technical design
 pipeline/04_tasks.md          ← task scope and implementation plan
-CLAUDE.md, AGENTS.md          ← repo rules (generated files, CSS layers, tokens, commit scope)
+docs/guidelines.md            ← development rules (the rule-compliance baseline)
+CLAUDE.md, AGENTS.md          ← repo workflow and structure
 ```
 
 ### Step 2 — Four audit dimensions
@@ -58,29 +43,22 @@ CLAUDE.md, AGENTS.md          ← repo rules (generated files, CSS layers, token
 **Architecture**
 
 - Are component boundaries clear and justified? Is an existing layout, partial, collection or CSS block reused before a new one is added?
-- Is the change minimal for a static site (no new dependencies or build steps without a reason)?
+- Is the change minimal and linear (no dead code, compatibility shims or new dependencies without a reason)?
 - Are ADRs present for non-obvious decisions?
 
 **Rule compliance**
 
 - Does the work match `pipeline/03_design.md` / `04_tasks.md`?
-- Generated files untouched (`dist/`, `src/_includes/css/`, `src/_includes/scripts/`, `colors.json`); colours changed via `colorsBase.json` + `npm run colors`.
-- CSS follows the CUBE layers and design tokens; no hardcoded spacing, colour or type values where a token exists.
-- Commits follow Conventional Commits and carry code only — never ticket, KB or pipeline files.
+- Does it follow `docs/guidelines.md` (linear development, tokens, accessibility, typography, fonts, public-repo security, commits)? Cite the section.
 
 **Security & public exposure** (this repository is public)
 
-- No private data in content or commits beyond what `src/_data/personal.yaml` already publishes.
-- No secrets; `.env` stays out of git.
-- `| safe` in Nunjucks only on trusted, repo-authored data.
-- Headers and CSP in `netlify.toml` still allow what the change needs (forms, embeds) and nothing more.
+- `docs/guidelines.md` §10: no private data beyond `src/_data/personal.yaml`, no secrets, `| safe` only on repo-authored data, no third-party request without privacy policy and `netlify.toml` updated in the same change.
 
-**Verification** (no unit test suite)
+**Verification**
 
-- `npm run build` passes.
-- `npm run test:a11y` run for template, layout, navigation, content and CSS changes.
+- The quality gates from `docs/guidelines.md` §11 were run and pass; a11y has no new errors.
 - No internal links to missing pages, no empty pages, sitemap lists only existing pages.
-- Polish UI copy, no hardcoded copy in JS (i18n-friendly).
 
 ### Step 3 — Output structure
 

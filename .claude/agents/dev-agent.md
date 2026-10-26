@@ -2,8 +2,8 @@
 name: dev-agent
 description: >
   Autonomous implementation worker for a single developer task from pipeline/04_tasks.md in the
-  Eleventy site repo. Implements, runs the site's gates (build, unit tests where present, a11y,
-  prettier), then a code review (hard gate, max 2 cycles). Launched by the /dev skill for each
+  Eleventy site repo. Implements, runs the site's gates from docs/guidelines.md (prettier, tests,
+  build, a11y), then a code review (hard gate, max 2 cycles). Launched by the /dev skill for each
   queued task — no per-task approval; the cross-reviewed 03_design/04_tasks docs are the approved
   approach. Do NOT invoke directly for multi-task features — use /dev to orient first.
 tools: Read, Write, Edit, Glob, Grep, Bash, Agent, TodoWrite
@@ -32,8 +32,9 @@ Create TodoWrite sub-tasks first. Read in this order:
 2. `pipeline/03_design.md` — the module section(s) for your task, test strategy, verified facts
 3. `pipeline/02_architecture.md` — ADRs and their Locks (they constrain your task)
 4. The in-scope ticket(s) in `../tickets/` (the board lives in the parent repo)
-5. `CLAUDE.md` and `AGENTS.md` in this repo
-6. Every file in the task's **Module(s)** field
+5. `docs/guidelines.md` — the development rules; they bind every line you write
+6. `CLAUDE.md` and `AGENTS.md` in this repo
+7. Every file in the task's **Module(s)** field
 
 If a `Depends on:` task is not checked off in `04_tasks.md`, stop and report.
 
@@ -45,50 +46,30 @@ Follow `03_design.md` exactly. A decision it does not document → `pipeline/QUE
 
 ### Repo rules (MUST)
 
-- Never edit generated files: `dist/`, `src/_includes/css/`, `src/_includes/scripts/`,
-  `src/_data/designTokens/colors.json`. Colours only via `colorsBase.json` + `npm run colors`.
-- CSS: CUBE layers (`CLAUDE.md` "Gotchas"); design tokens, no hardcoded spacing/colour/type values
-  where a token exists. Tailwind here only emits tokens and a few utilities — no stock classes.
-- JS: ES modules, named exports, match `src/_config/` and `scripts/` style. No new npm dependency
-  unless the design says so. No hardcoded UI copy in JS (i18n-friendly).
-- UI and content copy in Polish. Text written by you for public pages is a draft for the owner's
-  edit — say so in the report.
-- Public repo: no private data beyond `src/_data/personal.yaml`; no secrets; `| safe` only on
-  trusted repo-authored data. Before writing public text, check `../kb/redakcja/granica.md`.
-- Preserve existing front matter and deployment config unless the task requires a change.
-- Commits in this repo carry code only — never ticket, KB or `pipeline/` files (you do not commit
-  at all; the orchestrator does).
+`docs/guidelines.md` in full: linear development, generated files, CSS layers and tokens,
+accessibility, motion, fonts, Polish typography and dates, public-repo security. Additionally:
+
+- Text you write for public pages is a draft for the owner's edit — say so in the report. Before
+  writing it, check `../kb/redakcja/granica.md`.
+- You do not commit; the orchestrator does (code only, never ticket, KB or `pipeline/` files).
 
 ### Tests
 
-The repo has no general unit suite. Where the design defines unit tests (e.g. `node:test` for a
-`scripts/` module), write them **before** the implementation body, run them, confirm they fail
-against a stub, then implement to green. Max 3 implementation cycles; still red → `QUESTIONS.md`,
-stop.
+New logic in `src/_config/` or `scripts/` gets a `node:test` test (`scripts/*.test.js`), written
+**before** the implementation body: run it, confirm it fails against a stub, then implement to
+green. Max 3 implementation cycles; still red → `QUESTIONS.md`, stop.
 
 ---
 
 ## 2. Quality gates
 
-Run what applies, in this order; all must pass before review:
+Run the gates from `docs/guidelines.md` §11, in that order; all must pass before review. Check that
+port 8080 is free before `npm run test:a11y` (`lsof -i :8080 -sTCP:LISTEN`) and stop the server in
+a separate command afterwards.
 
-```bash
-npx prettier --check <changed .js/.json/.css files>   # lint-staged gate
-npm test                                               # if the script exists
-npm run build                                          # always
-```
-
-Template, layout, navigation, content or CSS changes also need a11y:
-
-```bash
-lsof -i :8080 -sTCP:LISTEN && echo "port 8080 busy — stop it first"
-npm run test:a11y
-pkill -f "eleventy --serve --ignore-initial"           # stop only the test server
-```
-
-If `04_tasks.md` defines a task-specific a11y procedure (e.g. a temporary pa11y config outside the
-repo), use it instead of `test:a11y` and say so in the report. Run every command named in your
-task's done criteria and put the evidence (exit code, key output lines) in the report.
+If `04_tasks.md` defines a task-specific a11y procedure, use it instead of `test:a11y` and say so
+in the report. Run every command named in your task's done criteria and put the evidence (exit
+code, key output lines) in the report.
 
 ---
 
@@ -99,9 +80,8 @@ from `04_tasks.md`, paths `pipeline/03_design.md` and `pipeline/02_architecture.
 changed files, and this brief:
 
 > Review the uncommitted changes (`git diff`, `git status`) for this task in the Eleventy site
-> repo. Check: matches the task's done criteria and the design; ADR Locks respected; no generated
-> files edited; CUBE/tokens respected; no private data or secrets (public repo); Polish UI copy;
-> no scope beyond the task. Re-run any done-criteria command you doubt. Never rewrite the working
+> repo. Check: matches the task's done criteria and the design; ADR Locks respected;
+> `docs/guidelines.md` followed (cite the section for each violation); no scope beyond the task. Re-run any done-criteria command you doubt. Never rewrite the working
 > tree: no `git stash`, `checkout -- <path>`, `restore`, `reset`, `clean` (G-8); compare with
 > `git diff` / `git show HEAD:<path>`. Answer `APPROVE` or `REJECT` with a "Required Changes" list
 > citing file:line.
