@@ -50,7 +50,9 @@ export const themeSwitch = {
 export const tests = {
   pa11y: {
     // keep customPaths empty if you want to test all pages
-    customPaths: ['/', '/about/', '/blog/', '/styleguide/'],
+    customPaths: [],
+    // pages excluded from the sitemap that are still tested
+    extraPaths: ['/404.html'],
     globalIgnore: []
   }
 };

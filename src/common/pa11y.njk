@@ -6,7 +6,8 @@ permalink: "pa11y.json"
 
 {#
   Generates pa11y accessibility test config in test environment.
-  Tests all pages by default, or custom paths if defined in meta.tests.pa11y.customPaths
+  Tests all sitemap pages by default, or custom paths if defined in meta.tests.pa11y.customPaths.
+  Paths in meta.tests.pa11y.extraPaths (pages excluded from the sitemap) are appended in both cases.
 #}
 {%- set useCustomPaths = meta.tests.pa11y.customPaths and meta.tests.pa11y.customPaths.length > 0 -%}
 
@@ -37,6 +38,13 @@ permalink: "pa11y.json"
     {%- endif -%}
   {%- endfor -%}
 {%- endif -%}
+
+{%- for path in meta.tests.pa11y.extraPaths or [] -%}
+  {%- set urls = (urls.push({
+    url: 'http://localhost:8080' + path,
+    ignore: []
+  }), urls) -%}
+{%- endfor -%}
 
 {%- set config = {
   defaults: {
