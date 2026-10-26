@@ -36,3 +36,73 @@ Hosted on Netlify only (`netlify.toml`) at `https://adamkucharczyk.pl`. Flow: pu
 ## Content & Language
 
 Site language is Polish; an English version may follow later. Posts live in `src/posts/YYYY/YYYY-MM-DD-slug.md`, authored directly as files in git.
+
+## Codex Audit Workflow
+
+When asked to review, challenge, or provide a counterview on existing work:
+
+### Step 1 — Load context
+
+Read what exists (skip files that don't exist yet):
+
+```
+../tickets/NNNN-*.md          ← in-scope ticket bodies (the requirements spec; board lives in the parent repo)
+pipeline/02_architecture.md   ← architectural decisions, ADRs, component boundaries
+pipeline/03_design.md         ← technical design
+pipeline/04_tasks.md          ← task scope and implementation plan
+CLAUDE.md, AGENTS.md          ← repo rules (generated files, CSS layers, tokens, commit scope)
+```
+
+### Step 2 — Four audit dimensions
+
+**Architecture**
+- Are component boundaries clear and justified? Is an existing layout, partial, collection or CSS block reused before a new one is added?
+- Is the change minimal for a static site (no new dependencies or build steps without a reason)?
+- Are ADRs present for non-obvious decisions?
+
+**Rule compliance**
+- Does the work match `pipeline/03_design.md` / `04_tasks.md`?
+- Generated files untouched (`dist/`, `src/_includes/css/`, `src/_includes/scripts/`, `colors.json`); colours changed via `colorsBase.json` + `npm run colors`.
+- CSS follows the CUBE layers and design tokens; no hardcoded spacing, colour or type values where a token exists.
+- Commits follow Conventional Commits and carry code only — never ticket, KB or pipeline files.
+
+**Security & public exposure** (this repository is public)
+- No private data in content or commits beyond what `src/_data/personal.yaml` already publishes.
+- No secrets; `.env` stays out of git.
+- `| safe` in Nunjucks only on trusted, repo-authored data.
+- Headers and CSP in `netlify.toml` still allow what the change needs (forms, embeds) and nothing more.
+
+**Verification** (no unit test suite)
+- `npm run build` passes.
+- `npm run test:a11y` run for template, layout, navigation, content and CSS changes.
+- No internal links to missing pages, no empty pages, sitemap lists only existing pages.
+- Polish UI copy, no hardcoded copy in JS (i18n-friendly).
+
+### Step 3 — Output structure
+
+```markdown
+## Challenges
+[Specific objections with file:line references where possible]
+
+## Missing aspects
+[What the work doesn't address but should]
+
+## Alternative approaches
+[Concrete alternatives with trade-offs]
+
+## Risks
+[What could go wrong in production or during implementation]
+```
+
+### Step 4 — Output target & reconciliation
+
+Write findings to a sibling review file next to the artifact under audit — never edit the artifact yourself:
+
+| Artifact under audit          | Review file                          |
+| ----------------------------- | ------------------------------------ |
+| `pipeline/02_architecture.md` | `pipeline/02_architecture.review.md` |
+| `pipeline/03_design.md`       | `pipeline/03_design.review.md`       |
+| `pipeline/04_tasks.md`        | `pipeline/04_tasks.review.md`        |
+| code changes                  | `pipeline/code.review.md`            |
+
+Claude then runs `/cross-review` to reconcile each finding and revise the artifact (or code) in place — git history plus the `.review.md` file provide the separation, so do not create `_v2` files.
