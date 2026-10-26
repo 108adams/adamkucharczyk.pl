@@ -6,51 +6,23 @@ permalink: "pa11y.json"
 
 {#
   Generates pa11y accessibility test config in test environment.
-  Tests all sitemap pages by default, or custom paths if defined in meta.tests.pa11y.customPaths.
-  Paths in meta.tests.pa11y.extraPaths (pages excluded from the sitemap) are appended in both cases.
+  Tests all sitemap pages plus meta.tests.pa11y.extraPaths (pages excluded from the sitemap).
 #}
-{%- set useCustomPaths = meta.tests.pa11y.customPaths and meta.tests.pa11y.customPaths.length > 0 -%}
+{%- set urls = [] -%}
+{%- for page in collections.showInSitemap -%}
+  {%- if page.url and page.data.excludeFromSitemap != true and page.url.startsWith('/') -%}
+    {%- set urls = (urls.push('http://localhost:8080' + page.url), urls) -%}
+  {%- endif -%}
+{%- endfor -%}
 
-{%- if useCustomPaths -%}
-  {%- set urls = [] -%}
-  {%- for path in meta.tests.pa11y.customPaths -%}
-    {%- set url = 'http://localhost:8080' + path -%}
-    {%- set pageData = null -%}
-    {%- for page in collections.all -%}
-      {%- if page.url == path -%}
-        {%- set pageData = page.data -%}
-      {%- endif -%}
-    {%- endfor -%}
-    {%- set urls = (urls.push({
-      url: url,
-      ignore: pageData.pa11yIgnore or []
-    }), urls) -%}
-  {%- endfor -%}
-{%- else -%}
-  {%- set urls = [] -%}
-  {%- for page in collections.showInSitemap -%}
-    {%- if page.url and page.data.excludeFromSitemap != true and page.url.startsWith('/') -%}
-      {%- set url = 'http://localhost:8080' + page.url -%}
-      {%- set urls = (urls.push({
-        url: url,
-        ignore: page.data.pa11yIgnore or []
-      }), urls) -%}
-    {%- endif -%}
-  {%- endfor -%}
-{%- endif -%}
-
-{%- for path in meta.tests.pa11y.extraPaths or [] -%}
-  {%- set urls = (urls.push({
-    url: 'http://localhost:8080' + path,
-    ignore: []
-  }), urls) -%}
+{%- for path in meta.tests.pa11y.extraPaths -%}
+  {%- set urls = (urls.push('http://localhost:8080' + path), urls) -%}
 {%- endfor -%}
 
 {%- set config = {
   defaults: {
     standard: "WCAG2AA",
     timeout: 10000,
-    ignore: meta.tests.pa11y.globalIgnore or [],
     chromeLaunchConfig: {
       args: ["--no-sandbox", "--disable-setuid-sandbox"]
     }

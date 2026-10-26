@@ -153,13 +153,3 @@ a:not([class]):hover {
   background-color: var(--color-text);
   color: var(--color-bg);
 }
-
-.preload-transitions * {
-  transition: none !important;
-}
-
-@media (scripting: none) {
-  .require-js {
-    display: none;
-  }
-}

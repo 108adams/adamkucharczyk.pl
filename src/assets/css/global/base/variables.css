@@ -1,70 +1,16 @@
 /* Global variables.  */
 
-/* Basic variable definitions for color schemes */
 :root {
-  --gutter: var(--space-m-l);
-  --transition-duration: 250ms;
-  --transition-timing: ease;
   --wrapper-width: 85rem;
   --tracking: -0.04ch;
   --tracking-s: -0.075ch;
-  --tracking-wide: 0.04ch;
   --stroke: 1px solid var(--color-bg-accent);
 
-  --gradient-rainbow: linear-gradient(90deg, #cf4662 10%, #fbbe25 30%, #62c95c 50%, #08bccb 75%, #a977d5 90%);
-  --gradient-conic: conic-gradient(
-    var(--color-primary) 0 28%,
-    var(--color-secondary) 0 67%,
-    var(--color-tertiary) 0 100%
-  );
-  --gradient-stripes: linear-gradient(
-    45deg,
-    var(--color-gray-900) 0 75%,
-    var(--color-primary) 0 85%,
-    var(--color-secondary) 0 92%,
-    var(--color-tertiary) 0 100%
-  );
-
-  --color-light: var(--color-gray-100);
   --color-dark: var(--color-gray-900);
-  --color-mid: var(--color-gray-400);
 }
 
-/* Light theme - Solarized Light */
-:root,
-:root[data-theme='light'] {
-  --color-text: var(--color-solarized-base00);
-  --color-bg: var(--color-solarized-base3);
-
-  --color-primary: var(--color-solarized-cyan);
-  --color-secondary: var(--color-solarized-green);
-  --color-tertiary: var(--color-solarized-yellow);
-
-  --color-text-accent: var(--color-solarized-base01);
-  --color-text-muted: var(--color-solarized-base1);
-  --color-bg-accent: var(--color-solarized-base2);
-  --color-bg-accent-2: var(--color-solarized-base1);
-  --color-text-strong: var(--color-solarized-base02);
-}
-
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-text: var(--color-solarized-base00);
-    --color-bg: var(--color-solarized-base3);
-
-    --color-primary: var(--color-solarized-cyan);
-    --color-secondary: var(--color-solarized-green);
-    --color-tertiary: var(--color-solarized-yellow);
-
-    --color-text-accent: var(--color-solarized-base01);
-    --color-text-muted: var(--color-solarized-base1);
-    --color-bg-accent: var(--color-solarized-base2);
-    --color-bg-accent-2: var(--color-solarized-base1);
-    --color-text-strong: var(--color-solarized-base02);
-  }
-}
-:root[data-theme='dark'] {
+/* Solarized Light — the only theme */
+:root {
   --color-text: var(--color-solarized-base00);
   --color-bg: var(--color-solarized-base3);
 

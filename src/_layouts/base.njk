@@ -1,5 +1,3 @@
-{% set assetHash = helpers.random() %}
-
 <!doctype html>
 <html lang="{{ meta.lang }}">
   <!-- The order of elements in the head follows recommendations by Harry Roberts. learn more here: https://www.youtube.com/watch?v=MHyAOZ45vnU -->
@@ -20,23 +18,16 @@
 
     <base href="{{ page.url }}"/>
 
-    <!-- 3 synchronous js  -->
-    {% include "head/js-inline.njk" %}
-
-    <!-- 4 schema settings -->
+    <!-- 3 schema settings -->
     {% include "head/schema.njk" %}
 
-    <!-- 5 CSS  -->
-    <!-- <link rel="stylesheet" href="/assets/css/global.css?{{ assetHash }}" /> -->
+    <!-- 4 CSS  -->
     {% include "head/css-inline.njk" %}
 
-    <!-- 6 preloads  -->
+    <!-- 5 preloads  -->
     {% include "head/preloads.njk" %}
 
-    <!-- 7 defer  -->
-    {% include "head/js-defer.njk" %}
-
-    <!-- 8 meta tags, icons, open graph etc.  -->
+    <!-- 6 meta tags, icons, open graph etc.  -->
     {% include "head/meta-info.njk" %}
   </head>
 
