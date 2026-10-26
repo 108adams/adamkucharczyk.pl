@@ -3,7 +3,7 @@
 }
 
 .landing-page strong {
-  color: orangered;
+  color: var(--color-emphasis);
 }
 
 .section-label {

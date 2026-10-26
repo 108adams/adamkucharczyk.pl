@@ -94,7 +94,7 @@
 }
 
 .prose ol li::marker {
-  color: var(--color-primary);
+  color: var(--color-primary-text);
 }
 
 .prose img {

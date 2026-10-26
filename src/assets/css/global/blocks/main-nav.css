@@ -42,9 +42,9 @@
 }
 
 .mainnav a:hover {
-  color: var(--color-primary);
+  color: var(--color-primary-text);
 }
 
 .mainnav [aria-current='page'] {
-  color: var(--color-primary);
+  color: var(--color-primary-text);
 }

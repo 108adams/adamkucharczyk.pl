@@ -58,7 +58,7 @@
   --button-bg: var(--color-bg);
   --button-border-color: var(--color-bg);
   --button-color: var(--color-text);
-  --button-hover-color: var(--color-primary);
+  --button-hover-color: var(--color-primary-text);
   --button-radius: 50%;
   --button-font-size: var(--size-step-min-2);
   aspect-ratio: 1;
