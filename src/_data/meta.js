@@ -30,34 +30,6 @@ export const themeLight = '#f8f8f8'; // used for meta tag theme-color, if light 
 export const themeDark = '#2e2e2e'; // used for meta tag theme-color, if dark colors are prefered. best use value set for dark bg
 export const opengraph_default = '/assets/images/template/opengraph-default.jpg'; // fallback/default meta image
 export const opengraph_default_alt = 'Visible content: Personal Site of IT tutor'; // alt text for default meta image"
-export const blog = {
-  // RSS feed
-  name: 'Adam Kucharczyk - Blog',
-  description: 'Szkolenia z AI dla zawodowców IT.',
-  // feed links are looped over in the head. You may add more to the array.
-  feedLinks: [
-    {
-      title: 'Atom Feed',
-      url: '/feed.xml',
-      type: 'application/atom+xml'
-    },
-    {
-      title: 'JSON Feed',
-      url: '/feed.json',
-      type: 'application/json'
-    }
-  ],
-  // Tags
-  tagSingle: 'Tag',
-  tagPlural: 'Tagi',
-  tagMore: 'Więcej tagów:',
-  // pagination
-  paginationLabel: 'Blog',
-  paginationPage: 'Strona',
-  paginationPrevious: 'Poprzednia',
-  paginationNext: 'Następna',
-  paginationNumbers: true
-};
 export const details = {
   aria: 'section controls',
   expand: 'expand all',

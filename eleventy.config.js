@@ -15,7 +15,7 @@ dotenv.config();
 import yaml from 'js-yaml';
 
 //  config import
-import {getAllPosts, showInSitemap, tagList} from './src/_config/collections.js';
+import {showInSitemap} from './src/_config/collections.js';
 import events from './src/_config/events.js';
 import filters from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
@@ -35,20 +35,15 @@ export default async function (eleventyConfig) {
   // --------------------- layout aliases
   eleventyConfig.addLayoutAlias('base', 'base.njk');
   eleventyConfig.addLayoutAlias('page', 'page.njk');
-  eleventyConfig.addLayoutAlias('post', 'post.njk');
-  eleventyConfig.addLayoutAlias('tags', 'tags.njk');
 
   //	---------------------  Collections
-  eleventyConfig.addCollection('allPosts', getAllPosts);
   eleventyConfig.addCollection('showInSitemap', showInSitemap);
-  eleventyConfig.addCollection('tagList', tagList);
 
   // ---------------------  Plugins
   eleventyConfig.addPlugin(plugins.htmlConfig);
   eleventyConfig.addPlugin(plugins.drafts);
 
   eleventyConfig.addPlugin(plugins.EleventyRenderPlugin);
-  eleventyConfig.addPlugin(plugins.rss);
   eleventyConfig.addPlugin(plugins.syntaxHighlight);
 
   eleventyConfig.addPlugin(plugins.webc, {
@@ -92,15 +87,10 @@ export default async function (eleventyConfig) {
   eleventyConfig.addShortcode('imageKeys', shortcodes.imageKeysShortcode);
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
-  // --------------------- Events: after build
-  if (process.env.ELEVENTY_RUN_MODE === 'serve') {
-    eleventyConfig.on('eleventy.after', events.svgToJpeg);
-  }
-
   // --------------------- Passthrough File Copy
 
   // -- same path
-  ['src/assets/fonts/', 'src/assets/images/template', 'src/assets/og-images'].forEach(path =>
+  ['src/assets/fonts/', 'src/assets/images/template'].forEach(path =>
     eleventyConfig.addPassthroughCopy(path)
   );
 

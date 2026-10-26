@@ -50,19 +50,11 @@
 />
 <meta
   property="og:image"
-  content="{%- if layout == 'post' -%}
-    {{- meta.url -}}/assets/og-images/{{ title | slugify }}-preview.jpeg
-  {%- else -%}
-    {{- meta.url -}}{{- meta.opengraph_default -}}
-  {%- endif -%}"
+  content="{{- meta.url -}}{{- meta.opengraph_default -}}"
 />
 <meta
   property="og:image:alt"
-  content="{%- if layout == 'post' -%}
-    {{- title -}}
-  {%- else -%}
-    {{- meta.opengraph_default_alt -}}
-  {%- endif -%}"
+  content="{{- meta.opengraph_default_alt -}}"
 />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -72,16 +64,6 @@
 <meta property="article:author" content="{{ meta.author.name }}" />
 
 <!-- Twitter specific head data was removed in v2 -->
-
-<!-- RSS Autodiscovery. Loops over meta.blog.feedLinks -->
-{% for feedLink in meta.blog.feedLinks %}
-  <link
-    rel="alternate"
-    type="{{ feedLink.type }}"
-    title="{{ feedLink.title }}: {{ meta.siteName }}"
-    href="{{ feedLink.url }}"
-  />
-{% endfor %}
 
 <!-- Favicon: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->
 <link rel="icon" href="{{ '/favicon.ico' | url }}" sizes="any" />

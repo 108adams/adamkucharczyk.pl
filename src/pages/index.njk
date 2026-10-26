@@ -4,9 +4,6 @@ permalink: /index.html
 title: 'Adam Kucharczyk'
 description: 'Architektura w świecie AI'
 metaclass: landing-page
-blog:
-    title: 'Blog'
-    intro: 'Co mnie zainteresowało, czym się zajmowałem'
 ---
 <div class="wrapper flow prose">
 
@@ -75,23 +72,5 @@ blog:
 </div>
 <div class="credential-item"><strong>Grupa docelowa:</strong> deweloperzy, architekci i PM</div>
 </section>
-
-    <!--
-<section id="blog-posts" class="blog-posts">
-<div class="section-label">{{ blog.title }}</div>
-{% if blog.intro %}
-<p style="margin-bottom: 3rem; color: var(--color-text-accent);">{{ blog.intro }}</p>
-{% endif %}
-<div class="feature region region-space-l">
-    <custom-masonry layout="50-50">
-        {% set itemList = collections.allPosts %}
-        {% asyncEach item in itemList.slice(0, 4) %}
-        {% set headingLevel = "h3" %}
-        {% include "partials/card-blog.njk" %}
-        {% endeach %}
-    </custom-masonry>
-</div>
-</section>
--->
 
 </div>
