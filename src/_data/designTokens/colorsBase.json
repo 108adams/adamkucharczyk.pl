@@ -70,6 +70,34 @@
     {
       "name": "Solarized Blue",
       "value": "#268bd2"
+    },
+    {
+      "name": "Solarized Base00 AA",
+      "value": "#556a72"
+    },
+    {
+      "name": "Solarized Base01 AA",
+      "value": "#556a71"
+    },
+    {
+      "name": "Solarized Base1 AA",
+      "value": "#657272"
+    },
+    {
+      "name": "Solarized Cyan AA",
+      "value": "#00746d"
+    },
+    {
+      "name": "Solarized Cyan AA Large",
+      "value": "#239c94"
+    },
+    {
+      "name": "Solarized Green AA",
+      "value": "#5e6e00"
+    },
+    {
+      "name": "Orangered AA",
+      "value": "#ce1300"
     }
   ]
 }
