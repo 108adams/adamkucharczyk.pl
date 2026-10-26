@@ -56,23 +56,27 @@ CLAUDE.md, AGENTS.md          ← repo rules (generated files, CSS layers, token
 ### Step 2 — Four audit dimensions
 
 **Architecture**
+
 - Are component boundaries clear and justified? Is an existing layout, partial, collection or CSS block reused before a new one is added?
 - Is the change minimal for a static site (no new dependencies or build steps without a reason)?
 - Are ADRs present for non-obvious decisions?
 
 **Rule compliance**
+
 - Does the work match `pipeline/03_design.md` / `04_tasks.md`?
 - Generated files untouched (`dist/`, `src/_includes/css/`, `src/_includes/scripts/`, `colors.json`); colours changed via `colorsBase.json` + `npm run colors`.
 - CSS follows the CUBE layers and design tokens; no hardcoded spacing, colour or type values where a token exists.
 - Commits follow Conventional Commits and carry code only — never ticket, KB or pipeline files.
 
 **Security & public exposure** (this repository is public)
+
 - No private data in content or commits beyond what `src/_data/personal.yaml` already publishes.
 - No secrets; `.env` stays out of git.
 - `| safe` in Nunjucks only on trusted, repo-authored data.
 - Headers and CSP in `netlify.toml` still allow what the change needs (forms, embeds) and nothing more.
 
 **Verification** (no unit test suite)
+
 - `npm run build` passes.
 - `npm run test:a11y` run for template, layout, navigation, content and CSS changes.
 - No internal links to missing pages, no empty pages, sitemap lists only existing pages.
@@ -82,15 +86,19 @@ CLAUDE.md, AGENTS.md          ← repo rules (generated files, CSS layers, token
 
 ```markdown
 ## Challenges
+
 [Specific objections with file:line references where possible]
 
 ## Missing aspects
+
 [What the work doesn't address but should]
 
 ## Alternative approaches
+
 [Concrete alternatives with trade-offs]
 
 ## Risks
+
 [What could go wrong in production or during implementation]
 ```
 
