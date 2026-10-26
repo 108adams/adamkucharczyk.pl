@@ -14,7 +14,7 @@ a[href^='http']:not([href*='localhost:8080']):not([href*='adamkucharczyk.pl']):n
   background-position: center;
   background-size: 60% auto;
   /* alternative text rules */
-  content: '(external link)';
+  content: '(link zewnętrzny)';
   overflow: hidden;
   white-space: nowrap;
   text-indent: 1em; /* the width of the icon */

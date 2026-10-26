@@ -4,7 +4,7 @@ discover:
   title: Polityka Prywatności
 permalink: /privacy/index.html
 description: Ta strona jest zgodna z ogólnym rozporządzeniem o ochronie danych osobowych UE (RODO). Ten dokument wyjaśnia, jak gromadzę i obsługuję wszelkie informacje, które mi przekazujesz.
-date: "Last Modified"
+date: 2025-12-30
 layout: page
 ---
 
@@ -41,4 +41,4 @@ Skontaktuj się ze mną: {{ personal.email }}.
 
 ---
 
-*Ostatnia aktualizacja: {{ page.date | formatDate('MMMM D, YYYY') }}*
+*Ostatnia aktualizacja: {{ page.date | formatDate }}*

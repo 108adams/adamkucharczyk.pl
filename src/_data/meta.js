@@ -1,3 +1,5 @@
+import colors from './designTokens/colors.json' with {type: 'json'};
+
 export const url = process.env.URL || 'http://localhost:8080';
 export const siteName = 'Adam Kucharczyk';
 export const siteDescription = 'Szkolenia IT';
@@ -9,9 +11,8 @@ export const author = {
   fediverse: '@adamkucharczyk@pol.social'
 };
 export const pathToSvgLogo = 'src/assets/svg/misc/logo.svg'; // used for favicon generation
-export const themeColor = '#dd4462'; // used in manifest, for example primary color value
-export const themeLight = '#f8f8f8'; // used for meta tag theme-color, if light colors are prefered. best use value set for light bg
-export const themeDark = '#2e2e2e'; // used for meta tag theme-color, if dark colors are prefered. best use value set for dark bg
+// page background (--color-bg); the site has a single light theme
+export const themeColor = colors.items.find(c => c.name === 'Solarized Base3').value;
 export const opengraph_default = '/assets/images/template/opengraph-default.jpg'; // fallback/default meta image
 export const opengraph_default_alt = 'Visible content: Personal Site of IT tutor'; // alt text for default meta image"
 export const navigation = {

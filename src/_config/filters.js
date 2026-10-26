@@ -1,6 +1,5 @@
-import {toISOString, formatDate} from './filters/dates.js';
+import {formatDate} from './filters/dates.js';
 
 export default {
-  toISOString,
   formatDate
 };

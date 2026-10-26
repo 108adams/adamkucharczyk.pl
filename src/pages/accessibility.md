@@ -1,7 +1,6 @@
 ---
 title: 'Deklaracja dostępności'
 description: 'Standard dostępności, do którego dąży ta strona, i sposób zgłaszania barier.'
-date: "Last Modified"
 permalink: /accessibility/index.html
 layout: page
 ---

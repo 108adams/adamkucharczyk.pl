@@ -1,7 +1,4 @@
-import dayjs from 'dayjs';
+const longDate = new Intl.DateTimeFormat('pl-PL', {dateStyle: 'long', timeZone: 'UTC'});
 
-/** Converts the given date string to ISO8610 format. */
-export const toISOString = dateString => dayjs(dateString).toISOString();
-
-/** Formats a date using dayjs's conventions: https://day.js.org/docs/en/display/format */
-export const formatDate = (date, format) => dayjs(date).format(format);
+/** Formats a date for display, e.g. "30 grudnia 2025". */
+export const formatDate = date => longDate.format(date);

@@ -4,7 +4,9 @@
   margin-bottom: 24px;
   border-left: 3px solid var(--color-primary);
   position: relative;
-  transition: all 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-left-color 0.3s ease;
 }
 
 .service-card:hover {
@@ -18,7 +20,7 @@
 }
 
 .service-badge {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -39,7 +41,7 @@
 }
 
 .service-link {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
   color: var(--color-primary);
   text-decoration: none;

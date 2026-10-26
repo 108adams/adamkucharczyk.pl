@@ -17,7 +17,7 @@
 }
 
 .site-logo {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 600;
   color: var(--color-text-strong);
@@ -32,7 +32,7 @@
 }
 
 .mainnav a {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;

@@ -10,13 +10,13 @@
     {
       "name": "Base",
       "description": "Base font stack for body text.",
-      "value": ["Spectral", "system-ui", "sans-serif"]
+      "value": ["Spectral", "Georgia", "serif"]
     },
     {
       "name": "Mono",
-      "description": "Monospace font for code and preformatted text.",
+      "description": "Monospace font for labels, navigation and other UI text.",
       "value": [
-        "IBM+Plex+Mono",
+        "IBM Plex Mono",
         "ui-monospace",
         "Cascadia Code",
         "Source Code Pro",
