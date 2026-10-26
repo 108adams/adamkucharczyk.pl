@@ -4,9 +4,13 @@ eleventyExcludeFromCollections: true
 excludeFromSitemap: true
 ---
 
-/* TEAM */ Developer: {{ meta.creator.name }} Contact: {{ meta.creator.email }} Site:
-{{ meta.creator.website }}
-{% if meta.creator.social %}
-  Find me on: {{ meta.creator.social }}
-{% endif %}
+/* TEAM */
+Owner: {{ meta.author.name }}
+Contact: {{ personal.email }}
+Site: {{ meta.url }}
+
+/* THANKS */
+Template: eleventy-excellent by Lene Saile
+https://github.com/madrilene/eleventy-excellent
+
 /* SITE */ Doctype: HTML5

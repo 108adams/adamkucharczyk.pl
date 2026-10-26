@@ -18,12 +18,6 @@ export const author = {
   // (with the ActivityPub plugin installed), PeerTube, Pixelfed, etc.
   // https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/
 };
-export const creator = {
-  name: 'Lene Saile', // i.e. Lene Saile - creator's (developer) name.
-  email: 'hola@lenesaile.com',
-  website: 'https://www.lenesaile.com',
-  social: 'https://front-end.social/@lene'
-};
 export const pathToSvgLogo = 'src/assets/svg/misc/logo.svg'; // used for favicon generation
 export const themeColor = '#dd4462'; // used in manifest, for example primary color value
 export const themeLight = '#f8f8f8'; // used for meta tag theme-color, if light colors are prefered. best use value set for light bg
