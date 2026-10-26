@@ -14,3 +14,6 @@ src/_includes/scripts
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# local pipeline workbench (tickets and knowledge base live in the private parent repo)
+pipeline/

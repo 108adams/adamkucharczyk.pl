@@ -7,7 +7,12 @@ Global rules (git, security, ticket flow, commit format) come from `~/.claude`. 
 ## Repo-specific
 
 - **Branch:** work directly on `main`. Netlify auto-deploys on push, so run `npm run build` before pushing.
-- **Tickets:** clinban board in `tickets/`. No `pipeline/` or `kb/` in this repo yet.
+- **Tickets:** no board in this repo. Site tickets live on the owner's private board in the parent directory (`../tickets/`, tag `strona`); ranking in `../tickets/RANKING.md`.
+- **Pipeline:** `pipeline/` here is local and gitignored (repo is public). Skills that touch tickets or the knowledge base act on the parent repo instead of this one:
+  - clinban: run in a subshell, `(cd .. && clinban <cmd>)`; never create `.clinban` or `tickets/` here.
+  - `/architect` batch start and `/ship` Phase 3 (move, archive, `RANKING.md`), Phase 2 (`../kb/`, `../kb/log.md`): edit files in `..`, commit and push with `git -C ..` (private repo, branch `main`).
+  - `/ship` Phase 5: archive `pipeline/RUN_LOG.md` and handoffs to `../pipeline/archive/`, not to this repo.
+  - Commits in this repo carry code only; never ticket, KB or pipeline files.
 - **Before commit:** `npm run build`; also `npm run test:a11y` for template/CSS/content changes. `test:a11y` starts a background dev server — if it lingers, `pkill -f "eleventy --serve"`.
 - **Approach gate:** propose before coding only for design, multi-file, or build-system changes. Small content/CSS fixes: just do them.
 
