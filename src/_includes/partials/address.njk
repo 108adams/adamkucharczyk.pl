@@ -1,0 +1,1 @@
+<address>{% for line in personal.address.split("\n") %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</address>

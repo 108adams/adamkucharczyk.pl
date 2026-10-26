@@ -11,16 +11,16 @@ layout: page
 Ta strona jest zgodna z ogólnym rozporządzeniem o ochronie danych osobowych UE (RODO). Niniejszy dokument wyjaśnia, jak
 gromadzimy i przetwarzamy wszelkie informacje, które są przez Ciebie przekazywane.
 
-**Jakie dane są zbierane w tle?**
+**Jakie dane są zbierane w tle?**\
 Ta strona nie używa żadnych skryptów śledzących stron trzecich.
 
-**Jak wykorzystuję dane, które podajesz?**
+**Jak wykorzystuję dane, które podajesz?**\
 Ta strona nie gromadzi żadnych danych.
 
-**Jak bezpieczne są Twoje dane?**
+**Jak bezpieczne są Twoje dane?**\
 Bardzo bezpieczne, ponieważ ta strona nie gromadzi żadnych informacji.
 
-**Jak bezpieczna jest ta strona?**
+**Jak bezpieczna jest ta strona?**\
 Ta strona używa protokołu HTTPS, szyfrując wszystkie dane między przeglądarką a serwerem. Twój dostawca sieci
 nadal może zobaczyć, że pobierasz zasoby z tej strony, ale nie jej zawartość. Chroni to również przed przechwytywaniem
 danych przez strony trzecie, na przykład podczas przeglądania w publicznej sieci WiFi, lub przed wstrzykiwaniem reklam
@@ -29,14 +29,14 @@ polityka bezpieczeństwa treści jest dostosowana do wymagań tej strony.
 
 **Administrator danych**
 
-{{ personal.address }}
+{% include "partials/address.njk" %}
 
 Jeśli masz jakiekolwiek pytania lub wątpliwości, skontaktuj się ze mną: {{ personal.email }}.
 
-**Zmiany w polityce**
+**Zmiany w polityce**\
 Jeśli zmienię treść tej polityki, zmiany będą obowiązywać od momentu ich opublikowania.
 
-**Reklamacje**
+**Reklamacje**\
 Skontaktuj się ze mną: {{ personal.email }}.
 
 ---

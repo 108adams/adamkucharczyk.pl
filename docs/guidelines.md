@@ -94,6 +94,10 @@ The site has no images today and no image pipeline. When the first one arrives:
 
 - Pages: `src/pages/`, Markdown or Nunjucks, with front matter preserved unless the change
   requires otherwise. Posts (when the blog returns): `src/posts/YYYY/YYYY-MM-DD-slug.md`.
+- A line break in Markdown source is not a line break on the page (`breaks` is off), so text
+  reflows on narrow screens; wrap source lines freely. Force a break only where it is part of
+  the content, with a backslash at the end of the line. Postal addresses use
+  `partials/address.njk`.
 - Every page in the sitemap must exist and link only to existing pages; the build fails on a
   dead internal link.
 

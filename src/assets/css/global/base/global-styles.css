@@ -149,6 +149,10 @@ a:not([class]):hover {
   }
 }
 
+address {
+  font-style: normal;
+}
+
 ::selection {
   background-color: var(--color-text);
   color: var(--color-bg);

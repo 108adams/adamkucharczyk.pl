@@ -5,7 +5,6 @@ import {slugifyString} from '../filters/slugify.js';
 
 export const markdownLib = markdownIt({
   html: true,
-  breaks: true,
   linkify: true,
   typographer: true,
   quotes: '„”‚’'

@@ -9,7 +9,8 @@ layout: page
 
 &copy; Adam Kucharczyk, wszelkie prawa zastrzeżone.
 
-{{ personal.address }}
+{% include "partials/address.njk" %}
+
 {{ personal.email }}
 
 Strona zbudowana na podstawie kodu [eleventy-excellent](https://github.com/madrilene/eleventy-excellent) stworzonego przez [Lene Saile](https://www.lenesaile.com/en/)
