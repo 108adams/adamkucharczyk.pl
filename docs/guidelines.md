@@ -53,12 +53,20 @@ Target: WCAG 2.1 AA. pa11y checks part of it; the rest is on the author.
 - Never disable zoom (`maximum-scale`, `user-scalable=no`).
 - Focus stays visible: no `outline: none` without a `:focus-visible` replacement (global rule
   in `global-styles.css`). Hover and focus states are more prominent than the rest state.
+- Hover styles sit inside `@media (hover: hover) and (pointer: fine)`: on touch a tap leaves
+  `:hover` applied until the next tap elsewhere. Gate by capability, never by screen width.
+- The tap highlight is off globally (`reset.css`), so every link and button has an `:active`
+  state as press feedback on touch.
 
 ## 5. Motion
 
 - `prefers-reduced-motion` is honoured globally in `reset.css`; new motion must degrade with it.
-- Never `transition: all`; list the properties. Animate `transform` and `opacity`; short colour
-  transitions on hover are fine.
+- Never `transition: all`; list the properties. Animate `transform` and `opacity`, never layout
+  properties (`gap`, `width`, `margin`, `top`); short colour transitions on hover are fine.
+- Timing comes from tokens in `variables.css` (`--motion-hover`), not literal durations. UI
+  motion stays under 300 ms; hover and colour changes use `ease`, enter and exit `ease-out`,
+  never `ease-in`.
+- Motion that is not needed is not added: frequent actions (navigation, typing) stay instant.
 
 ## 6. Images and media
 

@@ -33,9 +33,15 @@
   letter-spacing: 0.1em;
   color: var(--color-text-accent);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color var(--motion-hover);
 }
 
-.footer-nav a:hover {
+.footer-nav a:active {
   color: var(--color-primary-text);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer-nav a:hover {
+    color: var(--color-primary-text);
+  }
 }

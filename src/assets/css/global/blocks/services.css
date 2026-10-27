@@ -4,7 +4,7 @@
   margin-bottom: 24px;
   border-left: 3px solid var(--color-primary);
   position: relative;
-  transition: border-left-color 0.3s ease;
+  transition: border-left-color var(--motion-hover);
 }
 
 .service-card.featured {
@@ -12,8 +12,10 @@
   border-left-color: var(--color-secondary);
 }
 
-.service-card:hover {
-  border-left-color: var(--color-text-strong);
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover {
+    border-left-color: var(--color-text-strong);
+  }
 }
 
 .service-badge {
@@ -47,13 +49,19 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: gap 0.3s ease;
-}
-
-.service-link:hover {
-  gap: 16px;
 }
 
 .service-link::after {
   content: '→';
+  transition: transform var(--motion-hover);
+}
+
+.service-link:is(:active, :focus-visible)::after {
+  transform: translateX(8px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-link:hover::after {
+    transform: translateX(8px);
+  }
 }

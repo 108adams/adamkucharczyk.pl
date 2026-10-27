@@ -44,9 +44,11 @@
 }
 
 /* Hover/focus/active */
-.button:hover {
-  background: var(--button-hover-bg);
-  color: var(--button-hover-color);
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-color);
+  }
 }
 
 .button:active {

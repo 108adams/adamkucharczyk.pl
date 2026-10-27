@@ -20,6 +20,11 @@ h4 {
   text-wrap: balance;
 }
 
+html {
+  /* no tap flash on touch; interactive elements style :active instead */
+  -webkit-tap-highlight-color: transparent;
+}
+
 html:focus-within {
   scroll-behavior: smooth;
 }

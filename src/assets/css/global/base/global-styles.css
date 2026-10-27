@@ -128,8 +128,14 @@ a {
   text-underline-offset: 0.2ch;
 }
 
-a:not([class]):hover {
+a:not([class]):active {
   text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:not([class]):hover {
+    text-decoration: none;
+  }
 }
 
 :focus {
