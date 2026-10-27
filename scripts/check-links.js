@@ -5,10 +5,10 @@ import {join, relative, resolve, sep} from 'node:path';
 import {pathToFileURL} from 'node:url';
 
 // Internal link check for the production build in dist/ (ADR-2).
-// Scope: href, src and srcset candidates in HTML files plus <loc> in sitemap.xml.
+// Scope: href, src, form action and srcset candidates in HTML files plus <loc> in sitemap.xml.
 // Skipped: fragments, non-http(s) schemes, other origins. Anchors are not checked.
 
-const LINK_ATTRS = new Set(['href', 'src']);
+const LINK_ATTRS = new Set(['href', 'src', 'action']);
 const NAMED_ENTITIES = {amp: '&', quot: '"', apos: "'", lt: '<', gt: '>'};
 
 const decodeEntities = value =>

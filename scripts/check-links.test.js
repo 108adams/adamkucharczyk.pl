@@ -152,3 +152,26 @@ test('checkDist: reports one broken link from HTML and sitemap', async () => {
     await rm(dist, {recursive: true, force: true});
   }
 });
+
+test('extractLinks: form action is a link', () => {
+  assert.deepEqual(extractLinks('<form action="/contact/sent/" method="POST"></form>'), ['/contact/sent/']);
+});
+
+test('checkDist: form action to a missing page is broken, to an existing page is not', async () => {
+  const dist = await mkdtemp(join(tmpdir(), 'check-links-'));
+  try {
+    await writeFile(
+      join(dist, 'index.html'),
+      `<html><head><base href="/"></head><body><form action="/contact/sent/" method="POST"></form></body></html>`
+    );
+    assert.deepEqual(checkDist(dist, ORIGIN).broken, [
+      {source: 'index.html', raw: '/contact/sent/', path: '/contact/sent/'}
+    ]);
+
+    await mkdir(join(dist, 'contact', 'sent'), {recursive: true});
+    await writeFile(join(dist, 'contact', 'sent', 'index.html'), '');
+    assert.deepEqual(checkDist(dist, ORIGIN).broken, []);
+  } finally {
+    await rm(dist, {recursive: true, force: true});
+  }
+});
