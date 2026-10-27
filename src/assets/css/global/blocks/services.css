@@ -1,7 +1,7 @@
 .service-card {
   background: var(--color-bg-accent);
-  padding: 48px;
-  margin-bottom: 24px;
+  padding: var(--space-xl);
+  margin-bottom: var(--space-l);
   border-left: 3px solid var(--color-primary);
   position: relative;
   transition: border-left-color var(--motion-hover);
@@ -18,37 +18,28 @@
   }
 }
 
-.service-badge {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-secondary-text);
-  margin-bottom: 16px;
-}
-
 .service-card h3 {
-  font-size: 32px;
+  font-size: var(--size-step-2);
   font-weight: 400;
   color: var(--color-text-strong);
-  margin-bottom: 16px;
+  margin-bottom: var(--space-m);
 }
 
 .service-card p {
   color: var(--color-text-accent);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-l);
 }
 
 .service-link {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--size-step-min-2);
   color: var(--color-primary-text);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-xs);
 }
 
 .service-link::after {

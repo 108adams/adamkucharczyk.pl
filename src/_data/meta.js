@@ -2,7 +2,8 @@ import colors from './designTokens/colors.json' with {type: 'json'};
 
 export const url = process.env.URL || 'http://localhost:8080';
 export const siteName = 'Adam Kucharczyk';
-export const siteDescription = 'Szkolenia IT';
+export const siteDescription =
+  'Architekt korporacyjny i platformowy: struktura wiedzy dla systemów AI, architektura gotowa na audyt, warsztaty dla biznesu i IT.';
 export const locale = 'pl_PL';
 export const lang = 'pl';
 export const skipContent = 'Przejdź do zawartości';
@@ -14,7 +15,7 @@ export const pathToSvgLogo = 'src/assets/svg/misc/logo.svg'; // used for favicon
 // page background (--color-bg); the site has a single light theme
 export const themeColor = colors.items.find(c => c.name === 'Solarized Base3').value;
 export const opengraph_default = '/assets/images/template/opengraph-default.jpg'; // fallback/default meta image
-export const opengraph_default_alt = 'Visible content: Personal Site of IT tutor'; // alt text for default meta image"
+export const opengraph_default_alt = 'Adam Kucharczyk, architekt korporacyjny'; // alt text for default meta image
 export const navigation = {
   ariaTop: 'Główna',
   ariaBottom: 'Uzupełniająca',
