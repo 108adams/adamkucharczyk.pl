@@ -11,8 +11,9 @@
 <meta name="description" content="{{ metaDescription }}" />
 <meta name="theme-color" content="{{ meta.themeColor }}" />
 <!-- Search Engines -->
-<meta name="robots" content="index,follow" />
-<meta name="googlebot" content="index,follow" />
+{% set robots = 'noindex,follow' if noindex else 'index,follow' %}
+<meta name="robots" content="{{ robots }}" />
+<meta name="googlebot" content="{{ robots }}" />
 <!-- Made with Eleventy! -->
 <meta name="generator" content="{{ eleventy.generator }}" />
 <!-- Disable automatic detection and formatting of possible phone numbers -->

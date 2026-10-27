@@ -23,6 +23,6 @@ export const navigation = {
 export const tests = {
   pa11y: {
     // pages excluded from the sitemap that are still tested
-    extraPaths: ['/404.html']
+    extraPaths: ['/404.html', '/contact/sent/']
   }
 };

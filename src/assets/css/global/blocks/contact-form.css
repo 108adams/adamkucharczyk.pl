@@ -1,0 +1,22 @@
+.contact-form {
+  --flow-space: var(--space-s);
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+}
+
+.contact-form :is(input, textarea) {
+  inline-size: 100%;
+  padding: var(--space-xs);
+  background: var(--color-bg);
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--border-radius-small);
+}
+
+.contact-form .button {
+  align-self: flex-start;
+  cursor: pointer;
+}
