@@ -16,3 +16,16 @@ src/_includes/css
 
 # local pipeline workbench (tickets and knowledge base live in the private parent repo)
 pipeline/
+
+# macOS litter
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Icon
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.DocumentRevisions-V100
+.VolumeIcon.icns
